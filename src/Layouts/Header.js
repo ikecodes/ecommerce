@@ -1,11 +1,10 @@
 import React from 'react';
 import { FaStore, FaUser, FaHeart, FaCartPlus, FaSearch } from 'react-icons/fa';
-
+import LogoImage from '../assets/images/logo-placeholder.jpg';
 const Header = () => {
   return (
     <div className=' flex  items-center justify-around p-3 flex-wrap bg-[#3EC1F9]'>
-      <h4 className='inline uppercase text-white'>Logo</h4>
-
+      <img src={LogoImage} alt='logo' className='h-12' />
       <div className='flex'>
         <div className='flex items-center bg-white rounded-3xl p-2 max-w-full '>
           <FaSearch color='gray' />
