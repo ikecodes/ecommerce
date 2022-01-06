@@ -6,8 +6,8 @@ import Layout from '../Layouts/Layout';
 const Locator = () => {
   return (
     <Layout>
-      <div className='py-10  p-5 lg:px-20 '>
-        <div className='flex items-center flex-wrap justify-center space-x-8  space-y-8 md:space-y-0 border-b-[0.5px] pb-4 border-gray-300 '>
+      <div className='py-10  p-0 md:p-5 lg:px-20 '>
+        <div className='flex items-center flex-wrap justify-center  md:space-x-4 border-b-[0.5px] pb-4 border-gray-300 '>
           <h4 className='hidden md:block font-semibold uppercase text-md'>
             store locator
           </h4>
@@ -48,7 +48,7 @@ const Locator = () => {
             </select>
           </div>
 
-          <button className='bg-[#3EC1F9] rounded-xl p-2 text-sm font-semibold uppercase text-white'>
+          <button className='bg-[#3EC1F9] rounded-xl p-2 text-sm font-semibold uppercase mt-4 sm:mt-0 text-white'>
             apply location
           </button>
         </div>

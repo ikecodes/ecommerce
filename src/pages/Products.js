@@ -7,7 +7,7 @@ const Products = () => {
   const arr = [1, 2, 3, 4, 5, 6, 7, 8];
   return (
     <Layout>
-      <div className='divide-y p-2'>
+      <div className='divide-y py-10 px-5'>
         <div className='flex items-center justify-center md:justify-between mx-4 my-2'>
           <h1 className='hidden sm:block font-semibold text-xl capitalize'>
             products
@@ -29,17 +29,35 @@ const Products = () => {
             </div>
           </div>
         </div>
-        <div className='my-2 sm:px-20 py-10 grid grid-cols-1 justify-items-center lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2  gap-8'>
-          {arr.map((item) => (
-            <ProductItem
-              key={item}
-              image={ProductImage}
-              description='Black Flip phone'
-              price={5000}
-              toCart
-              availability
-            />
-          ))}
+        <div className='flex my-2 sm:px-5 py-10 space-x-4 items-start justify-center'>
+          <div className='w-56 h-56 hidden lg:block'>
+            <h4 className='font-semibold uppercase mb-4'>filter</h4>
+            <div className='flex items-center flex-wrap space-x-2 space-y-2 capitalize'>
+              <button className='bg-[#DBDBDB] font-semibold p-2'>
+                sneakers
+              </button>
+              <button className='bg-[#DBDBDB] font-semibold p-2'>
+                calendar
+              </button>
+              <button className='bg-[#DBDBDB] font-semibold p-2'>caps</button>
+              <button className='bg-[#DBDBDB] font-semibold p-2'>
+                clothes
+              </button>
+              <button className='bg-[#DBDBDB] font-semibold p-2'>shoes</button>
+            </div>
+          </div>
+          <div className='grid grid-cols-1 justify-items-center lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2  gap-8'>
+            {arr.map((item) => (
+              <ProductItem
+                key={item}
+                image={ProductImage}
+                description='Black Flip phone'
+                price={5000}
+                toCart
+                availability
+              />
+            ))}
+          </div>
         </div>
       </div>
     </Layout>

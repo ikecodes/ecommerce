@@ -7,8 +7,8 @@ const Favorites = () => {
   const arr = [1, 2, 3, 4];
   return (
     <Layout>
-      <div className='p-2 md:p-10 overflow-x-scroll scrollbar-hide'>
-        <table class=' m-auto w-3/4 capitalize'>
+      <div className='py-10 px-5 overflow-x-scroll scrollbar-hide'>
+        <table class=' m-auto w-[50rem] capitalize'>
           <thead className='text-left border-b border-gray-300 mb-4'>
             <tr>
               <th></th>
@@ -18,19 +18,21 @@ const Favorites = () => {
               <th></th>
             </tr>
           </thead>
-          <tbody className='divide-y'>
+          <tbody className='divide-y space-y-4'>
             {arr.map((item) => (
               <tr>
                 <td>
-                  <img
-                    className='h-24 shrink-0'
-                    src={ProductImage}
-                    alt='product'
-                  />
+                  <div className='h-24 w-24'>
+                    <img
+                      className='h-full w-full object-cover'
+                      src={ProductImage}
+                      alt='product'
+                    />
+                  </div>
                 </td>
                 <td>
                   <h4 className='font-semibold text-sm'>Fliper phone</h4>
-                  <h4 className='text-xs'>high grade fliper phone</h4>
+                  <h4 className='text-sm'>high grade fliper phone</h4>
                 </td>
                 <td className='text-[#3EC1F9] font-semibold text-md'>N9,000</td>
                 <td>

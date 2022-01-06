@@ -66,7 +66,7 @@ const ProductDetails = () => {
                 </div>
               </div>
               <div className='flex items-center justify-between mt-6'>
-                <div className='flex space-x-2'>
+                <div className='flex flex-wrap items-start justify-start space-y-2 md:space-y-0 md:space-x-2'>
                   <AddToCart />
                   <BuyNow />
                 </div>
@@ -102,7 +102,7 @@ const ProductDetails = () => {
           <h4 className='uppercase font-semibold border-b-2 pb-2 border-gray-200'>
             similar product
           </h4>
-          <div className='p-10 overflow-y-scroll flex items-center justify-center space-x-4 scrollbar-hide'>
+          <div className='p-10 overflow-x-auto flex items-center lg:justify-center space-x-4 scrollbar-hide'>
             {arr.map((item) => (
               <ProductItem
                 key={item}
@@ -119,7 +119,7 @@ const ProductDetails = () => {
           <h4 className='uppercase font-semibold border-b-2 pb-2 border-gray-200'>
             Recently viewed
           </h4>
-          <div className='p-10 overflow-y-scroll flex items-center justify-center space-x-4 scrollbar-hide'>
+          <div className='p-10 overflow-x-auto flex items-center lg:justify-center space-x-4 scrollbar-hide'>
             {arr.map((item) => (
               <ProductItem
                 key={item}

@@ -7,9 +7,9 @@ const Cart = () => {
   const arr = [1, 2, 3, 4];
   return (
     <Layout>
-      <div className='p-2 md:p-5'>
+      <div className='py-10 px-5'>
         <div className='overflow-x-scroll scrollbar-hide'>
-          <table class=' m-auto w-3/4 capitalize'>
+          <table class=' m-auto  w-[50rem] capitalize'>
             <thead className='text-left border-b border-gray-300 mb-4'>
               <tr>
                 <th></th>
@@ -19,19 +19,21 @@ const Cart = () => {
                 <th></th>
               </tr>
             </thead>
-            <tbody className='divide-y'>
+            <tbody className='divide-y space-y-4'>
               {arr.map((item) => (
                 <tr>
                   <td>
-                    <img
-                      className='h-24 shrink-0'
-                      src={ProductImage}
-                      alt='product'
-                    />
+                    <div className='h-24 w-24'>
+                      <img
+                        className='h-full w-full object-cover'
+                        src={ProductImage}
+                        alt='product'
+                      />
+                    </div>
                   </td>
                   <td>
                     <h4 className='font-semibold text-sm'>Fliper phone</h4>
-                    <h4 className='text-xs'>high grade fliper phone</h4>
+                    <h4 className='text-sm'>high grade fliper phone</h4>
                   </td>
                   <td className='text-[#3EC1F9] font-semibold text-md'>
                     N9,000
@@ -49,7 +51,7 @@ const Cart = () => {
             </tbody>
           </table>
         </div>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mt-8 m-4 rounded py-4 px-40  gap-4 justify-items-center items-start lg:items-center'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  py-4 px-20'>
           <div className='flex capitalize items-center border-2 border-gray-300 space-x-4 p-2 px-4'>
             <span className='text-gray-400'>discount</span>
             <span className='font-semibold'>N9,000</span>

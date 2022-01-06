@@ -1,7 +1,8 @@
 import React from 'react';
 import Layout from '../Layouts/Layout';
-import headerBanner from '../assets/images/placeholder-banner.png';
-import ProductImage from '../assets/images/product-placeholder.jpg';
+import HeaderBanner from '../assets/images/banner2.jpg';
+import AccessoriesBanner from '../assets/images/accesories-banner.jpg';
+import ProductImage from '../assets/images/prod2.jpg';
 import Services from '../components/Services';
 import {
   FaCartPlus,
@@ -19,13 +20,14 @@ const Home = () => {
   return (
     <Layout>
       <div className='flex'>
-        <div className='bg-[#3EC1F9] hidden md:grid w-1/4 shrink-1 grid place-content-center cursor-pointer'>
+        <div className='bg-[#3EC1F9] hidden md:grid basis-1/4 shrink-1 grid place-content-center cursor-pointer'>
           <span className='font-bold text-white'>ORDER NOW</span>
         </div>
-        <div>
+
+        <div className='grow m-h-[80vh]'>
           <img
-            className='object-cover'
-            src={headerBanner}
+            className='h-full w-full object-cover'
+            src={HeaderBanner}
             alt='Header Banner'
           />
         </div>
@@ -47,6 +49,13 @@ const Home = () => {
           icon={<FaCartPlus size={35} />}
         />
       </div>
+      {/* <div className='mt-8 m-4 rounded m-h-[100vh]'>
+        <img
+          src={AccessoriesBanner}
+          className='object-cover h-full w-full'
+          alt='accesories'
+        />
+      </div> */}
       <div className='mt-5 p-8 flex items-center'>
         <div className='w-full h-0.5 bg-gray-300 z-0'></div>
         <h4 className='font-bold text-sm w-1/2 shrink-0 md:shrink text-center uppercase bg-white z-10'>
@@ -82,7 +91,7 @@ const Home = () => {
             view all
           </h4>
         </div>
-        <div className='p-10 overflow-y-scroll flex items-center justify-center space-x-4 scrollbar-hide'>
+        <div className='p-10 overflow-x-auto flex items-center lg:justify-center space-x-4 scrollbar-hide'>
           {arr.map((item) => (
             <ProductItem
               key={item}
