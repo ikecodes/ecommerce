@@ -1,6 +1,6 @@
 export const menu = [
   { name: 'home', to: '/' },
-  { name: 'product', to: '/product' },
+  { name: 'products', to: '/products' },
   { name: 'deal', to: '/deal' },
   { name: 'about', to: '/about' },
 ];

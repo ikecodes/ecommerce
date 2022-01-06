@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { menu } from '../constants/menu';
 const NavBar = () => {
   return (
-    <div className='flex items-center p-4'>
+    <div className='flex items-center p-4 border-b-[0.5px] border-gray-300'>
       <div className='flex items-center hidden md:flex ml-10 md:ml-20 cursor-pointer'>
         <FaTh size={20} />
         <span className='uppercase mx-2 font-semibold'>Categories</span>
