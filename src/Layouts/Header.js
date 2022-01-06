@@ -27,7 +27,9 @@ const Header = () => {
         <div className='flex items-center divide-x mt-2 md:mt-0'>
           <div className='flex items-center text-white text-sm p-2'>
             <FaUser />
-            <span className='pl-2'>Sign In</span>
+            <button disabled>
+              <span className='pl-2'>Sign In</span>
+            </button>
           </div>
           <Link to='/favorites'>
             <div className='flex items-center text-white text-sm p-2'>

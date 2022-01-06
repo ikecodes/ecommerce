@@ -11,8 +11,19 @@ const NavBar = () => {
       </div>
       <ul className='flex items-center space-x-4 ml-10 md:ml-20'>
         {menu.map((item) => (
-          <li className='font-semibold text-sm' key={item.name}>
-            <Link to={item.to}>{item.name.toUpperCase()}</Link>
+          <li key={item.name}>
+            <Link to={item.to}>
+              <button
+                className={`text-sm ${
+                  item.name === 'deal' || item.name === 'about'
+                    ? 'text-gray-300'
+                    : 'font-semibold '
+                }`}
+                disabled={item.name === 'deal' || item.name === 'about'}
+              >
+                {item.name.toUpperCase()}
+              </button>
+            </Link>
           </li>
         ))}
       </ul>
