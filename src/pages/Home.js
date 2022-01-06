@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '../Layouts/Layout';
 import HeaderBanner from '../assets/images/banner2.jpg';
-import AccessoriesBanner from '../assets/images/accesories-banner.jpg';
 import ProductImage from '../assets/images/prod2.jpg';
 import Services from '../components/Services';
 import {
@@ -49,13 +48,7 @@ const Home = () => {
           icon={<FaCartPlus size={35} />}
         />
       </div>
-      {/* <div className='mt-8 m-4 rounded m-h-[100vh]'>
-        <img
-          src={AccessoriesBanner}
-          className='object-cover h-full w-full'
-          alt='accesories'
-        />
-      </div> */}
+
       <div className='mt-5 p-8 flex items-center'>
         <div className='w-full h-0.5 bg-gray-300 z-0'></div>
         <h4 className='font-bold text-sm w-1/2 shrink-0 md:shrink text-center uppercase bg-white z-10'>
