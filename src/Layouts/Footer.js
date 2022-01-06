@@ -46,7 +46,7 @@ const Footer = () => {
         </ul>
         <div className='space-y-4'>
           <div>
-            <h4 className='font-semibold inline-block capitalize mr-2 text-lg border-b-2 pb-2'>
+            <h4 className='font-semibold inline-block capitalize mr-2 mb-2 text-lg border-b-2 pb-2'>
               address:
             </h4>
             <p className='capitalize font-light '>
@@ -54,12 +54,12 @@ const Footer = () => {
             </p>
           </div>
           <div>
-            <h4 className='font-semibold inline-block capitalize mr-2 text-lg border-b-2 pb-2'>
+            <h4 className='font-semibold inline-block capitalize mr-2 mb-4 text-lg border-b-2 pb-2'>
               Tel:
             </h4>
             <p className='capitalize font-light '>+40440404040</p>
           </div>
-          <div className='flex space-x-2 mt-4'>
+          <div className='flex space-x-2 mt-6 pt-8'>
             <FaTwitterSquare size={30} />
             <FaInstagram size={30} />
             <FaFacebook size={30} />

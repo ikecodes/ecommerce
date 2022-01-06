@@ -12,7 +12,7 @@ const ProductDetails = () => {
   return (
     <Layout>
       <div className='capitalize my-10 p-2 lg:px-20'>
-        <div className='flex items-center lg:items-start flex-wrap  justify-center  md:space-x-10'>
+        <div className='flex items-center lg:items-start flex-wrap p-4  justify-center  md:space-x-10'>
           <img className='max-h-96' src={ProductImage} alt='product' />
           <div>
             <h4 className='font-bold text-4xl my-4'>apple watch black color</h4>
@@ -70,7 +70,7 @@ const ProductDetails = () => {
                   <AddToCart />
                   <BuyNow />
                 </div>
-                <BsHeart size={20} className='text-[#3EC1F9] cursor-pointer' />
+                <BsHeart className='text-[#3EC1F9] md:text-base text-3xl cursor-pointer' />
               </div>
             </div>
           </div>

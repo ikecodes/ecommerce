@@ -51,20 +51,20 @@ const Cart = () => {
             </tbody>
           </table>
         </div>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  py-4 px-20'>
-          <div className='flex capitalize items-center border-2 border-gray-300 space-x-4 p-2 px-4'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  py-8 px-20'>
+          <div className='flex capitalize items-center justify-between border-2 border-gray-300 space-x-4 p-2 px-4'>
             <span className='text-gray-400'>discount</span>
             <span className='font-semibold'>N9,000</span>
           </div>
-          <div className='flex capitalize items-center border-2 border-gray-300 space-x-4 p-2 px-4'>
+          <div className='flex capitalize items-center justify-between border-2 border-gray-300 space-x-4 p-2 px-4'>
             <span className='text-gray-400'>delivery</span>
             <span className='font-semibold'>N9,000</span>
           </div>
-          <div className='flex capitalize items-center border-2 border-gray-300 space-x-4 p-2 px-4'>
+          <div className='flex capitalize items-center justify-between border-2 border-gray-300 space-x-4 p-2 px-4'>
             <span className='text-gray-400'>subtotal</span>
             <span className='font-semibold'>N9,000</span>
           </div>
-          <div className='flex capitalize items-center border-2 border-gray-300 space-x-4 p-2 px-4'>
+          <div className='flex capitalize items-center justify-between border-2 border-gray-300 space-x-4 p-2 px-4'>
             <span className='text-[#3EC1F9]'>total</span>
             <span className='font-semibold'>N9,000</span>
           </div>
