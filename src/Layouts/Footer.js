@@ -9,9 +9,7 @@ const Footer = () => {
       <div className=' p-10 px-20 flex flex-wrap md:justify-around  text-white space-x-4 space-y-4'>
         <img src={LogoImage} alt='Logo' className='h-36' />
         <ul className='list-style-none'>
-          <li className='capitalize text-2xl text-white border-b-2 pb-2'>
-            menu
-          </li>
+          <li className='capitalize text-2xl text-white '>menu</li>
           {menu.map((item) => (
             <li className='font-semibold text-sm mt-8' key={item.name}>
               <Link to={item.to} className='capitalize text-white font-light'>
@@ -21,9 +19,7 @@ const Footer = () => {
           ))}
         </ul>
         <ul className='list-style-none'>
-          <li className='capitalize text-2xl text-white border-b-2 pb-2'>
-            support
-          </li>
+          <li className='capitalize text-2xl text-white '>support</li>
           {support.map((item) => (
             <li className='font-semibold text-sm mt-8' key={item.name}>
               <Link to={item.to} className='capitalize text-white font-light '>
@@ -33,9 +29,7 @@ const Footer = () => {
           ))}
         </ul>
         <ul className='list-style-none mb-[10rem]'>
-          <li className='capitalize text-2xl text-white border-b-2 pb-2'>
-            legal
-          </li>
+          <li className='capitalize text-2xl text-white '>legal</li>
           {legal.map((item) => (
             <li className='font-semibold text-sm mt-8' key={item.name}>
               <Link to={item.to} className='capitalize text-white font-light '>
@@ -46,18 +40,18 @@ const Footer = () => {
         </ul>
         <div className='space-y-4'>
           <div>
-            <h4 className='font-semibold inline-block capitalize mr-2 mb-2 text-lg border-b-2 pb-2'>
+            <h4 className='font-semibold inline-block capitalize mr-2 mb-2 text-lg '>
               address:
             </h4>
-            <p className='capitalize font-light '>
+            <p className='capitalize font-light text-sm'>
               43 round table drive north london
             </p>
           </div>
           <div>
-            <h4 className='font-semibold inline-block capitalize mr-2 mb-4 text-lg border-b-2 pb-2'>
+            <h4 className='font-semibold inline-block capitalize mr-2 mb-4 text-lg '>
               Tel:
             </h4>
-            <p className='capitalize font-light '>+40440404040</p>
+            <p className='capitalize font-light text-sm '>+40440404040</p>
           </div>
           <div className='flex space-x-2 mt-6 pt-8'>
             <FaTwitterSquare size={30} />
@@ -66,7 +60,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <h4 className='p-4 capitalize text-white text-sm text-center'>
+      <h4 className='p-4 my-8 capitalize text-white text-sm text-center'>
         copy right 2021 - all rights reserved
       </h4>
     </div>

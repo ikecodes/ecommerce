@@ -5,11 +5,15 @@ import LogoImage from '../assets/images/logo-placeholder.jpg';
 const Header = () => {
   return (
     <div>
-      <div className=' flex  items-center justify-around p-3 flex-wrap bg-[#3EC1F9]'>
-        <img src={LogoImage} alt='logo' className='my-2 md:my-0 h-24' />
+      <div className=' flex  items-center justify-around  flex-wrap bg-[#3EC1F9]'>
+        <img
+          src={LogoImage}
+          alt='logo'
+          className='my-2 md:my-0 h-20 w-40 ml-10'
+        />
 
-        <div className='flex items-center bg-white rounded-3xl p-2 basis-1/2 '>
-          <FaSearch color='gray' />
+        <div className='flex items-center bg-white rounded-3xl p-2 basis-1/3 '>
+          <FaSearch color='#000000DE' className='mx-2' />
           <input
             type='text'
             name='Search'
@@ -18,7 +22,7 @@ const Header = () => {
           />
         </div>
         <Link to='/locator'>
-          <button className='flex items-center bg-white rounded-xl font-bold p-2 ml-2 text-sm text-[#3EC1F9]'>
+          <button className='flex items-center bg-white rounded-2xl font-bold p-2 lg:-ml-20 text-sm text-[#3EC1F9]'>
             <FaStore />
             <span className='ml-2'> Store Locator</span>
           </button>

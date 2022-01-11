@@ -17,7 +17,9 @@ const ProductItem = ({ image, description, price, toCart, availability }) => {
       <span className='bg-[#3EC1F9] p-2 absolute top-4 rounded-l-full right-0 text-white'>
         Out of stock
       </span>
-      <div className='font-semibold text-md mb-2.5'>{description}</div>
+      <div className='font-semibold text-md mb-2.5 text-[#000000DE]'>
+        {description}
+      </div>
       <span className='text-[#3EC1F9] font-bold mr-2 p-50'>N{price}</span>
       <span className='text-gray-200 line-through mb-2.5 font-bold text-sm p-50'>
         N9,000

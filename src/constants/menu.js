@@ -16,3 +16,17 @@ export const legal = [
   { name: 'disclaimer', to: '/disclaimer' },
   { name: 'caution notice', to: '/caution' },
 ];
+
+export const categories = [
+  'footwears',
+  'wearables',
+  'phones',
+  'bags',
+  'laptops',
+  'computer',
+  'television',
+  'components',
+  'washing machine',
+  'cameras',
+  'sneakers',
+];

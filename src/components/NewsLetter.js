@@ -2,12 +2,15 @@ import React from 'react';
 
 const NewsLetter = () => {
   return (
-    <div className='bg-black mt-10 p-10 grid grid-cols-1 lg:grid-cols-2 justify-items-center items-center sm:space-y-5'>
-      <p className='text-white capitalize text-center'>
+    <div
+      className='bg-black mt-10 p-10 grid grid-cols-1 lg:grid-cols-2 justify-items-center 
+    items-center sm:space-y-5'
+    >
+      <p className='text-white lg:justify-self-end capitalize text-center lg:w-1/2 mt-4'>
         subscribe to our newsletter to stay up to date with our latest news and
         product
       </p>
-      <div className='my-4'>
+      <div className='my-4 lg:my-0'>
         <input
           type='email'
           className='rounded p-2 mr-2 w-40  md:w-72 focus:outline-none'
