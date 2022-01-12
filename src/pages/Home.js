@@ -123,8 +123,8 @@ const Home = () => {
           title='Wareables'
         />
       </div>
-      <div className='mt-10 p-10'>
-        <div className='px-6 md:px-16 mb-20'>
+      <div className='mt-10 md:p-10'>
+        <div className='px-0 md:px-16 mb-20'>
           <Discount
             title='google extraordinary'
             image={SpeakerI}
