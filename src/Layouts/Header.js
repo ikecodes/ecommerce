@@ -18,10 +18,10 @@ const Header = () => {
         <img
           src={LogoImage}
           alt='logo'
-          className='my-2 md:my-0 h-20 w-40 ml-10'
+          className='my-2 md:my-0 h-20 w-40 sm:ml-10'
         />
 
-        <div className='flex items-center bg-white rounded-3xl p-2 basis-1/3 '>
+        <div className='flex items-center bg-white rounded-3xl p-2 basis-1/2 md:basis-1/3 '>
           <FaSearch color='#000000DE' className='mx-2' />
           <input
             type='text'

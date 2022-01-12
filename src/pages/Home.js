@@ -34,7 +34,7 @@ const Home = () => {
   }, []);
   return (
     <Layout>
-      <div className='flex h-[60vh]'>
+      <div className='flex h-[30vh] md:h-[60vh]'>
         <div className='bg-[#3EC1F9] hidden md:grid basis-1/4 shrink-1 grid place-content-center cursor-pointer  relative'>
           <span className='font-bold text-white'>ORDER NOW</span>
           <Categories />
