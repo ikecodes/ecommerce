@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Layout from '../Layouts/Layout';
 import HeaderBanner from '../assets/images/banner2.jpg';
 import HeaderBanner2 from '../assets/images/banner-shoe.jpg';
+import HeaderBanner3 from '../assets/images/Rolex-Watches-Wallpaper.jpg';
 import ProductImage from '../assets/images/prod2.jpg';
 import Services from '../components/Services';
 import {
@@ -17,7 +18,7 @@ import { BsCircle } from 'react-icons/bs';
 import Categories from '../components/Categories';
 
 const Home = () => {
-  const imgArr = [HeaderBanner, HeaderBanner2];
+  const imgArr = [HeaderBanner, HeaderBanner2, HeaderBanner3];
   const getRand = () => Math.ceil(Math.random() * imgArr.length) - 1;
   const [image, setImage] = useState(0);
   const arr = [1, 2, 3, 4];
@@ -38,7 +39,6 @@ const Home = () => {
           <span className='font-bold text-white'>ORDER NOW</span>
           <Categories />
         </div>
-
         <div className='grow'>
           <img
             className='h-full w-full object-cover'

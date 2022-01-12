@@ -8,22 +8,23 @@ const Cart = () => {
   return (
     <Layout>
       <div className='py-10 px-5'>
-        <div className='overflow-x-scroll scrollbar-hide'>
-          <table class=' m-auto  w-[50rem] capitalize'>
+        <div className='overflow-x-scroll scrollbar-hide m-auto lg:px-20'>
+          <h1 className='uppercase font-semibold mb-2'>my cart</h1>
+          <table class='w-full'>
             <thead className='text-left border-b border-gray-300 mb-4'>
               <tr>
-                <th></th>
-                <th>Description</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th></th>
+                <th className='p-4'></th>
+                <th className='p-4'>Description</th>
+                <th className='p-4'>Price</th>
+                <th className='p-4'>Quantity</th>
+                <th className='p-4'></th>
               </tr>
             </thead>
-            <tbody className='divide-y space-y-4'>
+            <tbody className='divide-y space-y-4 text-[#000000DE]'>
               {arr.map((item) => (
                 <tr>
-                  <td>
-                    <div className='h-24 w-24'>
+                  <td className='p-4'>
+                    <div className='h-40 w-40'>
                       <img
                         className='h-full w-full object-cover'
                         src={ProductImage}
@@ -31,18 +32,23 @@ const Cart = () => {
                       />
                     </div>
                   </td>
-                  <td>
-                    <h4 className='font-semibold text-sm'>Fliper phone</h4>
-                    <h4 className='text-sm'>high grade fliper phone</h4>
+                  <td className='p-4'>
+                    <h4 className='font-semibold'>Fliper phone</h4>
+                    <h4 className='text-[#7F7F7F] text-sm'>
+                      high grade fliper phone
+                    </h4>
                   </td>
-                  <td className='text-[#3EC1F9] font-semibold text-md'>
+                  <td className='text-[#3EC1F9] font-semibold text-md p-4'>
                     N9,000
                   </td>
-                  <td>
-                    <div className='flex  justify-start items-center space-x-2'>
-                      <FaPlus className='bg-[#3EC1F9] p-1 cursor-pointer' />
-                      <span>3</span>
-                      <FaMinus className='bg-[#3EC1F9] p-1 cursor-pointer' />
+                  <td className='p-4'>
+                    <div className='flex  justify-start  space-x-2 p-4 flex-wrap'>
+                      <span className='flex border-2 border-[#00000029] items-center'>
+                        <FaPlus className='bg-[#3EC1F9] h-full p-1 text-xl cursor-pointer' />
+                        <span className='px-2'>3</span>
+                        <FaMinus className='bg-[#3EC1F9] h-full p-1 text-xl cursor-pointer' />
+                      </span>
+                      <span></span>
                     </div>
                   </td>
                   <td className='text-red-400 cursor-pointer'>remove</td>
@@ -51,7 +57,8 @@ const Cart = () => {
             </tbody>
           </table>
         </div>
-        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  py-8 px-20'>
+
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 py-10 justify-content-between lg:px-24  gap-10'>
           <div className='flex capitalize items-center justify-between border-2 border-gray-300 space-x-4 p-2 px-4'>
             <span className='text-gray-400'>discount</span>
             <span className='font-semibold'>N9,000</span>

@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaStore, FaUser, FaHeart, FaCartPlus, FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import LogoImage from '../assets/images/logo-placeholder.jpg';
+import LocationSelection from '../components/LocationSelection';
+import StartOrder from '../components/StartOrder';
 const Header = () => {
+  const [show, setShow] = useState(false);
+
+  const handleShow = () => {
+    setShow((prev) => !prev);
+  };
   return (
     <div>
+      <LocationSelection show={show} handleShow={handleShow} />
+      <StartOrder />
       <div className=' flex  items-center justify-around  flex-wrap bg-[#3EC1F9]'>
         <img
           src={LogoImage}
@@ -21,12 +30,14 @@ const Header = () => {
             className='w-full focus:border-none focus:outline-none pl-3'
           />
         </div>
-        <Link to='/locator'>
-          <button className='flex items-center bg-white rounded-2xl font-bold p-2 lg:-ml-20 text-sm text-[#3EC1F9]'>
-            <FaStore />
-            <span className='ml-2'> Store Locator</span>
-          </button>
-        </Link>
+
+        <button
+          onClick={handleShow}
+          className='flex items-center bg-white rounded-2xl font-bold p-2 lg:-ml-20 text-sm text-[#3EC1F9]'
+        >
+          <FaStore />
+          <span className='ml-2'> Store Locator</span>
+        </button>
 
         <div className='flex items-center divide-x mt-2 md:mt-0'>
           <div className='flex items-center text-white text-sm p-2'>

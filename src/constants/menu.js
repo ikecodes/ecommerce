@@ -27,6 +27,4 @@ export const categories = [
   'television',
   'components',
   'washing machine',
-  'cameras',
-  'sneakers',
 ];

@@ -7,21 +7,21 @@ const Locator = () => {
   return (
     <Layout>
       <div className='py-10  p-0 md:p-5 lg:px-20 '>
-        <div className='flex items-center flex-wrap justify-center  md:space-x-4 border-b-[0.5px] pb-4 border-gray-300 '>
+        <div className='flex items-center flex-wrap justify-center md:justify-between  md:space-x-4 space-y-4 pb-4 border-b-[0.5px]  border-gray-300 '>
           <h4 className='hidden md:block font-semibold uppercase text-md'>
             store locator
           </h4>
-          <div className='h-10 flex items-center'>
+          <div className='h-14 flex items-center'>
             <label
               for='state'
-              className='h-full p-2 border-[0.5px] border-r-0 rounded-l border-[#707070] bg-[#FAFAFA] '
+              className='h-full py-auto  p-4 border-[0.5px] border-r-0 rounded-l-xl border-[#707070] bg-[#FAFAFA] '
             >
               State
             </label>
             <select
               name='state'
               id='state'
-              className='h-full focus:outline-none p-2 border-[0.5px] border-l-0 rounded-r border-[#707070] font-semibold'
+              className='h-full focus:outline-none  pl-2 pr-20 border-[0.5px] border-l-0 rounded-r-xl border-[#707070] font-semibold'
             >
               <option value='volvo'>Lagos</option>
               <option value='saab'>Abuja</option>
@@ -29,17 +29,17 @@ const Locator = () => {
               <option value='audi'>Enugu</option>
             </select>
           </div>
-          <div className='h-10  flex items-center'>
+          <div className='h-14  flex items-center'>
             <label
               for='lga'
-              className='h-full p-2 border-[0.5px] border-r-0 rounded-l border-[#707070] bg-[#FAFAFA]'
+              className='h-full py-auto px-6  p-4 border-[0.5px] border-r-0 rounded-l-xl border-[#707070] bg-[#FAFAFA]'
             >
               LGA
             </label>
             <select
               name='lga'
               id='lga'
-              className='h-full focus:outline-none p-2 border-[0.5px] border-l-0 rounded-r border-[#707070] font-semibold'
+              className='h-full focus:outline-none pl-2 pr-20 border-[0.5px] border-l-0 rounded-r-xl border-[#707070] font-semibold'
             >
               <option value='volvo'>Ikeja</option>
               <option value='saab'>Oshodi</option>
@@ -48,7 +48,7 @@ const Locator = () => {
             </select>
           </div>
 
-          <button className='bg-[#3EC1F9] rounded-xl p-2 text-sm font-semibold uppercase mt-4 sm:mt-0 text-white'>
+          <button className='bg-[#3EC1F9] ml-2 rounded-xl p-3 text-sm font-semibold uppercase mt-4 sm:mt-0 text-white'>
             apply location
           </button>
         </div>
@@ -61,13 +61,13 @@ const Locator = () => {
 
           <StoreLocation
             icon={<FaStore size={30} />}
-            name='store africa'
+            name='Store Africa'
             distance='500km away'
             location='21 kayode street abuleja,Lagos'
           />
           <StoreLocation
             icon={<FaStore size={30} />}
-            name='store africa'
+            name='Store Africa'
             distance='500km away'
             location='21 kayode street abuleja,Lagos'
           />

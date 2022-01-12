@@ -2,7 +2,7 @@ import React from 'react';
 
 const StoreLocation = ({ icon, name, location, distance }) => {
   return (
-    <div className='justify-between rounded p-6 bg-[#FAFAFA] flex items-center flex-wrap space-y-4'>
+    <div className='justify-between rounded p-2 bg-[#FAFAFA] flex items-center flex-wrap space-y-4'>
       <div className='flex items-center space-x-2 mb-2'>
         <div className='bg-[#70707080] rounded-full p-2 ml-3'>{icon}</div>
         <div className='text-capitalize  space-y-3'>

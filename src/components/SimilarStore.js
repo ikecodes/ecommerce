@@ -2,7 +2,7 @@ import React from 'react';
 
 const SimilarStore = ({ icon, name, location, distance }) => {
   return (
-    <div className='border-2 border-gray-300 rounded p-6 bg-[#FAFAFA] divide-y divide-gray-300'>
+    <div className='border-2 border-gray-300 rounded-xl p-1 bg-[#FAFAFA] divide-y space-y-2 divide-gray-300'>
       <div className='flex items-center space-x-2 mb-2'>
         <div className='bg-[#70707080] rounded-full p-2'>{icon}</div>
         <div className='text-capitalize text-xs space-y-3'>
@@ -25,7 +25,7 @@ const SimilarStore = ({ icon, name, location, distance }) => {
           </div>
         </div>
         <div className='flex justify-end'>
-          <button className='bg-[#3EC1F9] text-white p-1 rounded mt-2'>
+          <button className='bg-[#3EC1F9] text-white text-xs p-1 rounded mt-2'>
             start shopping
           </button>
         </div>
