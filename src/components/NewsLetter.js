@@ -6,7 +6,7 @@ const NewsLetter = () => {
       className='bg-black mt-10 p-10 grid grid-cols-1 lg:grid-cols-2 justify-items-center 
     items-center sm:space-y-5'
     >
-      <p className='text-white lg:justify-self-end capitalize text-center lg:w-1/2 mt-4'>
+      <p className='text-white lg:justify-self-end capitalize text-center md:w-3/4 mt-4'>
         subscribe to our newsletter to stay up to date with our latest news and
         product
       </p>

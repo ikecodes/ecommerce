@@ -6,16 +6,16 @@ const NavBar = () => {
   const [active, setActive] = useState('home');
   return (
     <div className='flex items-center p-4'>
-      <div className='flex items-center hidden md:flex ml-10 md:ml-20 cursor-pointer'>
-        <FaTh size={20} />
-        <span className='uppercase mx-2 font-semibold'>Categories</span>
+      <div className='flex items-center hidden md:flex ml-8 md:ml-20 space-x-6 cursor-pointer'>
+        <FaTh size={20} className='font-medium -mr-4 mr-2' />
+        <span className='uppercase mx-2 font-medium'>Categories</span>
       </div>
       <ul className='flex items-center space-x-4 ml-10 md:ml-40'>
         {menu.map((item) => (
           <li key={item.name}>
             <Link to={item.to} onClick={() => setActive(item.name)}>
               <button
-                className={`text-sm font-semibold uppercase ${
+                className={`text-sm font-medium uppercase ${
                   item.name === active ? 'text-[#3EC1F9]' : ''
                 }`}
                 disabled={item.name === 'deal' || item.name === 'about'}

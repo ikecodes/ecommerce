@@ -18,13 +18,15 @@ export const legal = [
 ];
 
 export const categories = [
-  'footwears',
-  'wearables',
-  'phones',
-  'bags',
-  'laptops',
-  'computer',
-  'television',
-  'components',
-  'washing machine',
+  { name: 'footwears', add: true },
+  { name: 'wearables', add: true },
+  { name: 'phones', add: false },
+  { name: 'bags', add: false },
+  { name: 'laptops', add: false },
+  { name: 'computer', add: false },
+  { name: 'television', add: false },
+  { name: 'components', add: false },
+  { name: 'washing machine', add: false },
+  { name: 'sneakers', add: false },
+  { name: 'component', add: false },
 ];

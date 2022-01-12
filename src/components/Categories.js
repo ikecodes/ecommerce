@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaPlus } from 'react-icons/fa';
 import { categories } from '../constants/menu';
 
 const Categories = ({ showFilter }) => {
@@ -7,7 +8,17 @@ const Categories = ({ showFilter }) => {
       <div>
         <ul className='space-y-2'>
           {categories.map((category) => (
-            <li className='capitalize font-medium text-lg'>{category}</li>
+            <div className='flex items-center'>
+              <li className='capitalize font-normal text-medium'>
+                {category.name}
+              </li>
+              {category.add && (
+                <FaPlus
+                  size={10}
+                  className='ml-auto font-normal text-gray-900'
+                />
+              )}
+            </div>
           ))}
         </ul>
         {showFilter && (

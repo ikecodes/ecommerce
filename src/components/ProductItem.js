@@ -17,7 +17,7 @@ const ProductItem = ({ image, description, price, toCart, availability }) => {
       <span className='bg-[#3EC1F9] p-2 absolute top-4 rounded-l-full right-0 text-white'>
         Out of stock
       </span>
-      <div className='font-semibold text-md mb-2.5 text-[#000000DE]'>
+      <div className='font-medium text-md mb-2.5 text-[#000000DE]'>
         {description}
       </div>
       <span className='text-[#3EC1F9] font-bold mr-2 p-50'>N{price}</span>
@@ -32,7 +32,7 @@ const ProductItem = ({ image, description, price, toCart, availability }) => {
       )}
 
       {availability && (
-        <p className='mt-2.5 text-[#07B52A] font-semibold'>
+        <p className='mt-2.5 text-[#07B52A] font-medium'>
           Available in 4 stores
         </p>
       )}
