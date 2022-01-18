@@ -20,10 +20,10 @@ const NavBarSm = ({ handleShowNav, showNav }) => {
   return (
     <div className={showNav ? 'block' : 'hidden'}>
       <div
-        className='absolute top-0 h-full w-full z-50 bg-[rgb(0,0,0,0.5)]'
+        className='fixed top-0 h-full w-full z-50 bg-[rgb(0,0,0,0.5)]'
         onClick={handleShowNav}
       ></div>
-      <div className='absolute top-0 h-full w-3/4 z-50 bg-white'>
+      <div className='fixed top-0 h-full w-3/4 z-50 bg-white'>
         <div className='flex items-start space-x-4 pt-4 border-b border-gray-300 pb-8 p-2'>
           <FaTimes size={20} onClick={handleShowNav} />
           <img src={NavImg} alt='Nav logo' className='h-20 w-40' />

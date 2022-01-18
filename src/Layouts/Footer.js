@@ -60,7 +60,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <h4 className='p-4 my-8 capitalize text-white text-sm text-center'>
+      <h4 className='p-4 mt-8 capitalize text-white text-sm text-center'>
         copy right 2021 - all rights reserved
       </h4>
     </div>
