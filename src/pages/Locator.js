@@ -13,7 +13,7 @@ const Locator = () => {
           </h4>
           <div className='h-14 flex items-center'>
             <label
-              for='state'
+              htmlFor='state'
               className='h-full py-auto  p-4 border-[0.5px] border-r-0 rounded-l-xl border-[#707070] bg-[#FAFAFA] '
             >
               State
@@ -31,7 +31,7 @@ const Locator = () => {
           </div>
           <div className='h-14  flex items-center'>
             <label
-              for='lga'
+              htmlFor='lga'
               className='h-full py-auto px-6  p-4 border-[0.5px] border-r-0 rounded-l-xl border-[#707070] bg-[#FAFAFA]'
             >
               LGA

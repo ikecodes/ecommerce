@@ -8,7 +8,7 @@ const Categories = ({ showFilter }) => {
       <div>
         <ul className='space-y-2'>
           {categories.map((category) => (
-            <div className='flex items-center'>
+            <div className='flex items-center' key={category.name}>
               <li className='capitalize font-normal text-medium'>
                 {category.name}
               </li>
