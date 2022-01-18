@@ -24,7 +24,7 @@ const Home = () => {
     <Layout>
       <Carousel />
       {/* /////////////////////////////////////////////////// */}
-      <div className='bg-[#3EC1F9] grid grid-cols-3 rounded px-16 py-8 gap-8 justify-items-center items-center'>
+      <div className='bg-[#3EC1F9] grid grid-cols-1 lg:grid-cols-3 rounded px-16 py-8 gap-8 justify-items-center items-center'>
         <Services
           title='if you are unable'
           text='100% satisfaction'
