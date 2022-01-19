@@ -14,22 +14,22 @@ const menu = [
   {
     name: 'home',
     to: '/',
-    icon: <FaHome className='text-2xl text-gray-700 mr-2' />,
+    icon: <FaHome className='text-2xl text-gray-500 mr-2' />,
   },
   {
     name: 'products',
     to: '/products',
-    icon: <FaShoppingCart className='text-2xl text-gray-700 mr-2' />,
+    icon: <FaShoppingCart className='text-2xl text-gray-500 mr-2' />,
   },
   {
     name: 'deal',
     to: '/deal',
-    icon: <FaPercentage className='text-2xl text-gray-700 mr-2' />,
+    icon: <FaPercentage className='text-2xl text-gray-500 mr-2' />,
   },
   {
     name: 'about',
     to: '/about',
-    icon: <FaFileAlt className='text-2xl text-gray-700 mr-2' />,
+    icon: <FaFileAlt className='text-2xl text-gray-500 mr-2' />,
   },
 ];
 
@@ -53,7 +53,7 @@ const NavBarSm = ({
       ></div>
       <div className='fixed top-0 h-full w-3/4 z-50 bg-white'>
         <div className='flex items-start space-x-4 pt-4 border-b border-gray-300 pb-8 p-2'>
-          <FaTimes size={25} onClick={handleShowNav} />
+          <FaTimes className='text-2xl text-gray-500' onClick={handleShowNav} />
           <img src={NavImg} alt='Nav logo' className='h-20 w-40' />
         </div>
         <ul className='mt-8 space-y-2 border-b border-gray-300 pb-8 p-2'>
@@ -77,7 +77,7 @@ const NavBarSm = ({
             className='flex items-center space-x-2 capitalize text-lg my-6'
             onClick={handleShowLocator}
           >
-            <FaStore className='text-2xl text-gray-700 mr-2' />
+            <FaStore className='text-2xl text-gray-500 mr-2' />
             <span> store locator</span>
           </li>
         </ul>

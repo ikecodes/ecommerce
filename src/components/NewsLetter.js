@@ -3,7 +3,7 @@ import React from 'react';
 const NewsLetter = () => {
   return (
     <div
-      className='bg-black mt-10 p-10 grid grid-cols-1 lg:grid-cols-2 justify-items-center 
+      className='bg-black md:mt-10 p-10 grid grid-cols-1 lg:grid-cols-2 justify-items-center 
     items-center sm:space-y-5'
     >
       <p className='text-white lg:justify-self-end capitalize text-center md:w-3/4 mt-4'>
