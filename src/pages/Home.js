@@ -49,7 +49,7 @@ const Home = () => {
         </h4>
         <div className='w-full h-0.5 bg-gray-300 z-0'></div>
       </div>
-      <div className='p-4 md:px-40 justify-items-center grid grid-cols-2 lg:grid-cols-4 gap-8 scrollbar-hide'>
+      <div className='p-4 md:px-40 justify-items-center grid grid-cols-2 lg:grid-cols-4 gap-8'>
         <BrowseCategories
           icon={
             <FaShoePrints className='text-lg md:text-7xl' color='#3EC1F9' />
@@ -94,7 +94,7 @@ const Home = () => {
               view all
             </h4>
           </div>
-          <div className='mt-10 overflow-x-auto flex items-center lg:justify-around px-8 space-x-4 scrollbar-hide'>
+          <div className='p-8 justify-items-center grid grid-cols-2 lg:grid-cols-4 gap-8'>
             {arr.map((item) => (
               <ProductItem
                 key={item}
@@ -102,6 +102,7 @@ const Home = () => {
                 description='Black Flip phone'
                 price={5000}
                 availability
+                home
               />
             ))}
           </div>
@@ -117,7 +118,9 @@ const Home = () => {
               view all
             </h4>
           </div>
-          <div className='mt-10 overflow-x-auto flex items-center lg:justify-around px-8 space-x-4 scrollbar-hide'>
+          {/* mt-10 overflow-x-auto flex items-center lg:justify-around px-8
+          space-x-4 scrollbar-hide */}
+          <div className='p-8 justify-items-center grid grid-cols-2 lg:grid-cols-4 gap-8'>
             {arr.map((item) => (
               <ProductItem
                 key={item}
@@ -125,6 +128,7 @@ const Home = () => {
                 description='Black Flip phone'
                 price={5000}
                 availability
+                home
               />
             ))}
           </div>

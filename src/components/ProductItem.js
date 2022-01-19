@@ -2,11 +2,20 @@ import React from 'react';
 import { BsHeart } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { AddToCart } from './Buttons';
-const ProductItem = ({ image, description, price, toCart, availability }) => {
+const ProductItem = ({
+  image,
+  description,
+  price,
+  toCart,
+  availability,
+  home,
+}) => {
   return (
     <div className='relative'>
       <Link to='/productDetails'>
-        <div className='w-60 h-60 mb-2'>
+        <div
+          className={`${home ? 'w-40 h-40 lg:w-60 lg:h-60' : 'w-60 h-60'} mb-2`}
+        >
           <img
             className='object-cover h-full w-full'
             src={image}

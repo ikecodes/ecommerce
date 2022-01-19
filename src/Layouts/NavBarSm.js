@@ -1,13 +1,36 @@
 import React, { useState } from 'react';
-import { FaTimes } from 'react-icons/fa';
+import {
+  FaTimes,
+  FaShoppingCart,
+  FaHome,
+  FaPercentage,
+  FaFileAlt,
+  FaStore,
+} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import NavImg from '../assets/images/logo-placeholder.jpg';
 
 const menu = [
-  { name: 'home', to: '/' },
-  { name: 'products', to: '/products' },
-  { name: 'deal', to: '/deal' },
-  { name: 'about', to: '/about' },
+  {
+    name: 'home',
+    to: '/',
+    icon: <FaHome className='text-2xl text-gray-700 mr-2' />,
+  },
+  {
+    name: 'products',
+    to: '/products',
+    icon: <FaShoppingCart className='text-2xl text-gray-700 mr-2' />,
+  },
+  {
+    name: 'deal',
+    to: '/deal',
+    icon: <FaPercentage className='text-2xl text-gray-700 mr-2' />,
+  },
+  {
+    name: 'about',
+    to: '/about',
+    icon: <FaFileAlt className='text-2xl text-gray-700 mr-2' />,
+  },
 ];
 
 const NavBarSm = ({
@@ -41,16 +64,21 @@ const NavBarSm = ({
               onClick={() => handleClick(item.name)}
             >
               <li
-                className={`capitalize text-xl my-6 ${
+                className={`flex items-center space-x-2 capitalize text-lg my-6 ${
                   active === item.name ? 'text-[#3EC1F9]' : ''
                 }`}
               >
-                {item.name}
+                {item.icon}
+                <span>{item.name}</span>
               </li>
             </Link>
           ))}
-          <li className='capitalize text-xl my-6' onClick={handleShowLocator}>
-            store locator
+          <li
+            className='flex items-center space-x-2 capitalize text-lg my-6'
+            onClick={handleShowLocator}
+          >
+            <FaStore className='text-2xl text-gray-700 mr-2' />
+            <span> store locator</span>
           </li>
         </ul>
       </div>
