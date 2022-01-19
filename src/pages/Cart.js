@@ -10,7 +10,7 @@ const Cart = () => {
       <div className='py-10 px-5'>
         <div className='overflow-x-scroll scrollbar-hide m-auto lg:px-20'>
           <h1 className='uppercase font-semibold mb-2'>my cart</h1>
-          <table class='w-full'>
+          <table className='w-full'>
             <thead className='text-left border-b border-gray-300 mb-4'>
               <tr>
                 <th className='p-4'></th>
@@ -21,8 +21,8 @@ const Cart = () => {
               </tr>
             </thead>
             <tbody className='divide-y space-y-4 text-[#000000DE]'>
-              {arr.map((item) => (
-                <tr>
+              {arr.map((item, index) => (
+                <tr key={index}>
                   <td className='p-4'>
                     <div className='h-40 w-40'>
                       <img

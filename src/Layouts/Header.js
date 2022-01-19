@@ -31,11 +31,13 @@ const Header = () => {
       />
       <div className=' flex  items-center justify-around  flex-wrap bg-[#3EC1F9]'>
         <FaBars size={20} className='sm:hidden' onClick={handleShowNav} />
-        <img
-          src={LogoImage}
-          alt='logo'
-          className='my-2 md:my-0 h-15 w-24 sm:h-20 sm:w-40 sm:ml-10'
-        />
+        <Link to='/'>
+          <img
+            src={LogoImage}
+            alt='logo'
+            className='my-2 md:my-0 h-15 w-24 sm:h-20 sm:w-40 sm:ml-10'
+          />
+        </Link>
 
         <div className='flex items-center order-3 sm:order-1 bg-white rounded-3xl p-2 basis-full my-2 sm:my-0 mx-2 sm:mx-0 sm:basis-1/2 md:basis-1/3 '>
           <FaSearch color='#000000DE' className='mx-2' />

@@ -61,7 +61,11 @@ const NavBarSm = ({
             <Link
               to={item.to}
               key={item.name}
-              onClick={() => handleClick(item.name)}
+              onClick={(e) =>
+                item.name === 'deal' || item.name === 'about'
+                  ? e.preventDefault()
+                  : handleClick(item.name)
+              }
             >
               <li
                 className={`flex items-center space-x-2 capitalize text-lg my-6 ${
