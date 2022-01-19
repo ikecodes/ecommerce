@@ -44,26 +44,32 @@ const Home = () => {
 
       <div className='mt-5 p-8 flex items-center'>
         <div className='w-full h-0.5 bg-gray-300 z-0'></div>
-        <h4 className='font-bold text-sm w-1/2 shrink-0 md:shrink text-center uppercase bg-white z-10'>
+        <h4 className='font-bold text-sm w-1/2 shrink-0 md:shrink text-center uppercase bg-white z-10 whitespace-nowrap'>
           browse categories
         </h4>
         <div className='w-full h-0.5 bg-gray-300 z-0'></div>
       </div>
-      <div className='p-10 overflow-x-auto flex items-center lg:justify-center space-x-8 scrollbar-hide'>
+      <div className='p-4 md:px-40 justify-items-center grid grid-cols-2 lg:grid-cols-4 gap-8 scrollbar-hide'>
         <BrowseCategories
-          icon={<FaShoePrints size={80} color='#3EC1F9' />}
+          icon={
+            <FaShoePrints className='text-lg md:text-7xl' color='#3EC1F9' />
+          }
           title='Footwares'
         />
         <BrowseCategories
-          icon={<FaShoppingBag size={80} color='#3EC1F9' />}
+          icon={
+            <FaShoppingBag className='text-lg md:text-7xl' color='#3EC1F9' />
+          }
           title='Bags'
         />
         <BrowseCategories
-          icon={<FaMobile size={80} color='#3EC1F9' />}
+          icon={<FaMobile className='text-lg md:text-7xl' color='#3EC1F9' />}
           title='Phones'
         />
         <BrowseCategories
-          icon={<FaHeadphones size={80} color='#3EC1F9' />}
+          icon={
+            <FaHeadphones className='text-lg md:text-7xl' color='#3EC1F9' />
+          }
           title='Wareables'
         />
       </div>
