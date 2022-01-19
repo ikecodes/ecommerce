@@ -1,32 +1,34 @@
 import React, { useState } from 'react';
-import {
-  FaStore,
-  FaUser,
-  FaHeart,
-  FaCartPlus,
-  FaSearch,
-  FaBars,
-} from 'react-icons/fa';
+import { FaUser, FaHeart, FaCartPlus, FaSearch, FaBars } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import LogoImage from '../assets/images/logo-placeholder.jpg';
 import LocationSelection from '../components/LocationSelection';
 import StartOrder from '../components/StartOrder';
+import StoreLocatorBtn from '../components/StoreLocatorBtn';
 import NavBarSm from './NavBarSm';
 const Header = () => {
-  const [show, setShow] = useState(false);
+  const [showLocator, setShowLocator] = useState(false);
   const [showNav, setShowNav] = useState(false);
 
-  const handleShow = () => {
-    setShow((prev) => !prev);
+  const handleShowLocator = () => {
+    setShowLocator((prev) => !prev);
   };
   const handleShowNav = () => {
     setShowNav((prev) => !prev);
   };
   return (
     <div>
-      <LocationSelection show={show} handleShow={handleShow} />
+      <LocationSelection
+        showLocator={showLocator}
+        handleShowLocator={handleShowLocator}
+      />
       <StartOrder />
-      <NavBarSm handleShowNav={handleShowNav} showNav={showNav} />
+      <NavBarSm
+        handleShowNav={handleShowNav}
+        showNav={showNav}
+        handleShowLocator={handleShowLocator}
+        showLocator={showLocator}
+      />
       <div className=' flex  items-center justify-around  flex-wrap bg-[#3EC1F9]'>
         <FaBars size={20} className='sm:hidden' onClick={handleShowNav} />
         <img
@@ -45,13 +47,9 @@ const Header = () => {
           />
         </div>
 
-        <button
-          onClick={handleShow}
-          className='flex items-center order-2 sm:order-2 bg-white rounded-2xl font-bold p-2 lg:-ml-20 text-sm text-[#3EC1F9]'
-        >
-          <FaStore />
-          <span className='ml-2'> Store Locator</span>
-        </button>
+        <div className='hidden sm:block order-2'>
+          <StoreLocatorBtn handleShowLocator={handleShowLocator} />
+        </div>
 
         <div className='flex order-1 sm:order-3 items-center divide-x mt-2 md:mt-0'>
           <div className='flex items-center text-white text-sm p-2'>

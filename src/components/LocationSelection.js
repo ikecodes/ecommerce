@@ -1,16 +1,16 @@
 import React from 'react';
 
-const LocationSelecto = ({ show, handleShow }) => {
+const LocationSelecto = ({ showLocator, handleShowLocator }) => {
   return (
     <div
-      onClick={handleShow}
+      onClick={handleShowLocator}
       className={`absolute z-100 noShow bg-[rgb(0,0,0,0.5)] ${
-        show ? 'showAnim' : ''
+        showLocator ? 'showAnim' : ''
       }`}
     >
       <div
         className={`noShow2 lg:mx-20 bg-white flex items-center flex-wrap justify-center p-10  md:space-x-4 gap-4 ${
-          show ? 'showAnim2' : ''
+          showLocator ? 'showAnim2' : ''
         } `}
       >
         <div className='h-14 flex items-center'>
