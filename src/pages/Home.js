@@ -86,7 +86,7 @@ const Home = () => {
 
         <div className='my-10'>
           <div className='flex items-center justify-between'>
-            <h4 className='font-bold text-sm w-1/4 shrink-0 md:shrink  text-center uppercase bg-white z-10'>
+            <h4 className='font-bold text-sm w-1/4 shrink-0 md:shrink  text-center uppercase bg-white z-10 whitespace-nowrap mx-2'>
               best selling
             </h4>
             <div className='w-full h-0.5 bg-gray-300'></div>
@@ -109,7 +109,7 @@ const Home = () => {
 
         <div className='my-10'>
           <div className='flex items-center justify-between'>
-            <h4 className='font-bold text-sm w-1/4 shrink-0 md:shrink  text-center uppercase bg-white z-10'>
+            <h4 className='font-bold text-sm w-1/4 shrink-0 md:shrink  text-center uppercase bg-white z-10 whitespace-nowrap ml-2 mr-8'>
               deal of the day
             </h4>
             <div className='w-full h-0.5 bg-gray-300'></div>
