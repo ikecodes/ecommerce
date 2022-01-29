@@ -1,5 +1,16 @@
-import React, { useState } from 'react';
-import { FaUser, FaHeart, FaCartPlus, FaSearch, FaBars } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { getUser } from '../slices/authSlice';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import Toast from '../utils/Toast';
+import {
+  FaUser,
+  FaHeart,
+  FaCartPlus,
+  FaSearch,
+  FaBars,
+  FaSignOutAlt,
+} from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import LogoImage from '../assets/images/logo-placeholder.jpg';
 import LocationSelection from '../components/LocationSelection';
@@ -7,14 +18,29 @@ import StartOrder from '../components/StartOrder';
 import StoreLocatorBtn from '../components/StoreLocatorBtn';
 import NavBarSm from './NavBarSm';
 const Header = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const token = localStorage.getItem('token');
   const [showLocator, setShowLocator] = useState(false);
   const [showNav, setShowNav] = useState(false);
+
+  useEffect(() => {
+    if (token) {
+      dispatch(getUser());
+    }
+  }, [navigate, token, dispatch]);
 
   const handleShowLocator = () => {
     setShowLocator((prev) => !prev);
   };
   const handleShowNav = () => {
     setShowNav((prev) => !prev);
+  };
+
+  const handleLogout = () => {
+    localStorage.clear();
+    Toast('loggin you out', 'info');
+    navigate('/');
   };
   return (
     <div>
@@ -54,12 +80,23 @@ const Header = () => {
         </div>
 
         <div className='flex order-1 sm:order-3 items-center divide-x mt-2 md:mt-0'>
-          <div className='flex items-center text-white text-sm p-2'>
-            <FaUser />
-            <button disabled>
-              <span className='pl-2'>Sign In</span>
-            </button>
-          </div>
+          {token ? (
+            <div
+              className='flex items-center text-white text-sm p-2 cursor-pointer'
+              onClick={handleLogout}
+            >
+              <FaSignOutAlt />
+              <span className='pl-2'>Logout</span>
+            </div>
+          ) : (
+            <Link to='/signin'>
+              <div className='flex items-center text-white text-sm p-2'>
+                <FaUser />
+                <span className='pl-2'>Sign In</span>
+              </div>
+            </Link>
+          )}
+
           <Link to='/favorites'>
             <div className='flex items-center text-white text-sm p-2'>
               <FaHeart />
