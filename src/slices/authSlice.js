@@ -2,6 +2,18 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import * as api from '../api/api';
 import Toast from '../utils/Toast';
 
+export const addToSubscribers = createAsyncThunk(
+  'auth/addToSubscribers',
+  async (formdata, { rejectWithValue }) => {
+    try {
+      await api.addToSubscribers(formdata);
+      Toast('Email added to subscribers ist successfully.', 'success');
+    } catch (error) {
+      rejectWithValue(error);
+      Toast(error?.response?.data?.message, 'error');
+    }
+  }
+);
 export const getUser = createAsyncThunk(
   'auth/getUser',
   async (arg, { rejectWithValue }) => {
@@ -86,6 +98,6 @@ export const authSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } = authSlice.actions;
+// export const { increment, decrement, incrementByAmount } = authSlice.actions;
 
 export default authSlice.reducer;

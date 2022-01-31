@@ -9,6 +9,7 @@ const ProductItem = ({
   toCart,
   availability,
   home,
+  salePrice,
 }) => {
   return (
     <div className='relative'>
@@ -31,7 +32,7 @@ const ProductItem = ({
       </div>
       <span className='text-[#3EC1F9] font-bold mr-2 p-50'>N{price}</span>
       <span className='text-gray-200 line-through mb-2.5 font-bold text-sm p-50'>
-        N9,000
+        N{salePrice}
       </span>
       {toCart && (
         <div className='flex items-center  justify-between'>
@@ -42,7 +43,7 @@ const ProductItem = ({
 
       {availability && (
         <p className='mt-2.5 text-[#07B52A] font-medium'>
-          Available in 4 stores
+          Available in {availability} stores
         </p>
       )}
     </div>

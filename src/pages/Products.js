@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Layout from '../Layouts/Layout';
 import ProductItem from '../components/ProductItem';
-import ProductImage from '../assets/images/product-placeholder.jpg';
 import Categories from '../components/Categories';
+import { getProducts } from '../slices/productSlice';
 
 const Products = () => {
-  const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.product.products);
+
+  useEffect(() => {
+    dispatch(getProducts());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     <Layout>
       <div className='divide-y px-10'>
@@ -35,16 +42,18 @@ const Products = () => {
               </div>
             </div>
             <div className='grid grid-cols-1 justify-items-center lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2  gap-8 border-t border-gray-200 pt-4'>
-              {arr.map((item) => (
-                <ProductItem
-                  key={item}
-                  image={ProductImage}
-                  description='Black Flip phone'
-                  price={5000}
-                  toCart
-                  availability
-                />
-              ))}
+              {products &&
+                products.map((item) => (
+                  <ProductItem
+                    key={item.id}
+                    image={item.image}
+                    description='Black Flip phone'
+                    price={item.price}
+                    salePrice={item.sale_price}
+                    toCart
+                    availability={item.stores_having_product}
+                  />
+                ))}
             </div>
           </div>
         </div>

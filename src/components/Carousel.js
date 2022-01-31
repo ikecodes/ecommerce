@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import HeaderBanner from '../assets/images/banner2.jpg';
 import HeaderBanner2 from '../assets/images/banner-shoe.jpg';
 import HeaderBanner3 from '../assets/images/Rolex-Watches-Wallpaper.jpg';
 import Categories from './Categories';
+import { getBanners, getProducts } from '../slices/productSlice';
 const Carousel = () => {
+  const dispatch = useDispatch();
+  const banners = useSelector((state) => state.product.banners);
   const imgArr = [
     {
       url: HeaderBanner,
@@ -25,11 +29,17 @@ const Carousel = () => {
     },
   ];
   const getRand = () => Math.ceil(Math.random() * imgArr.length) - 1;
-  const [image, setImage] = useState(0);
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    dispatch(getBanners());
+    dispatch(getProducts());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setImage(getRand());
+      setIndex(getRand());
     }, 3000);
     return () => {
       clearInterval(interval);
@@ -45,16 +55,16 @@ const Carousel = () => {
       <div className='grow relative'>
         <img
           className='h-full w-full object-cover'
-          src={imgArr[image].url}
+          src={banners[index]?.image}
           alt='Header Banner'
         />
         <div className='absolute h-full w-full top-0 bg-[rgb(0,0,0,0.5)]'></div>
         <div className='absolute top-[50%] left-5 translate-y-[-50%] text-white'>
           <h1 className='text-4xl md:text-6xl capitalize font-bold'>
-            {imgArr[image].title}
+            {banners[index]?.title}
           </h1>
           <p className='mt-4 w-3/4 md:w-1/2 text-sm md:text-lg capitalize'>
-            {imgArr[image].description}
+            {banners[index]?.main_text}
           </p>
         </div>
       </div>
