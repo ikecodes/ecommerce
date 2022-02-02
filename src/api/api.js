@@ -23,11 +23,21 @@ export const addToSubscribers = (formdata) => API.post('/subscribe', formdata);
 ////PRODUCT
 export const getBanners = () => API.get('/banners');
 export const getProducts = () => API.get('/products');
+export const getProduct = (id) => API.get(`/products/${id}`);
+export const getSimilarStore = (id) => API.get(`products/${id}/stores`);
+export const getSimilarProduct = (id) => API.get(`/products?similar_to=${id}`);
 
 export const getCategories = () => API.get('/categories?page=1');
+export const categoriesProduct = (category) =>
+  API.get(`/products?category=${category}`);
 
 ////STORES
 export const getStates = () => API.get('/states');
 export const getLga = (id) => API.get(`/states/${id}/lga`);
 export const getStores = (stateId, lgaId) =>
   API.get(`/states/${stateId}/lga/${lgaId}/stores`);
+
+/////Favorites
+export const getFavorites = () => API.get('/products?favourites=true');
+export const addToFavorites = (id) => API.post(`/favorites/${id}`);
+export const removeFromFavorites = (id) => API.delete(`/favorites/${id}`);

@@ -1,8 +1,11 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { BsHeart } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
 import { AddToCart } from './Buttons';
+import { addToFavorites } from '../slices/favoriteSlice';
 const ProductItem = ({
+  id,
   image,
   description,
   price,
@@ -11,9 +14,10 @@ const ProductItem = ({
   home,
   salePrice,
 }) => {
+  const dispatch = useDispatch();
   return (
     <div className='relative'>
-      <Link to='/productDetails'>
+      <Link to={`/productDetails?id=${id}`}>
         <div
           className={`${home ? 'w-40 h-40 lg:w-60 lg:h-60' : 'w-60 h-60'} mb-2`}
         >
@@ -37,7 +41,10 @@ const ProductItem = ({
       {toCart && (
         <div className='flex items-center  justify-between'>
           <AddToCart />
-          <BsHeart className='text-[#3EC1F9]' />
+          <BsHeart
+            className='text-[#3EC1F9] cursor-pointer'
+            onClick={() => dispatch(addToFavorites(id))}
+          />
         </div>
       )}
 

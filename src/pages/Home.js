@@ -4,6 +4,7 @@ import SpeakerI from '../assets/images/speaker.png';
 import SpeakerII from '../assets/images/beats.jpg';
 import ProductImage from '../assets/images/prod2.jpg';
 import Services from '../components/Services';
+
 import {
   FaHeadphones,
   FaMobile,
@@ -20,6 +21,7 @@ import Carousel from '../components/Carousel';
 
 const Home = () => {
   const arr = [1, 2, 3, 4];
+
   return (
     <Layout>
       <Carousel />

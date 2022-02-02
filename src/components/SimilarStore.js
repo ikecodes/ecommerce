@@ -1,6 +1,14 @@
 import React from 'react';
 
-const SimilarStore = ({ icon, name, location, distance }) => {
+const SimilarStore = ({
+  id,
+  workingHours,
+  phone,
+  icon,
+  name,
+  location,
+  distance,
+}) => {
   return (
     <div className='border-2 border-gray-300 rounded-xl p-1 bg-[#FAFAFA] divide-y space-y-2 divide-gray-300'>
       <div className='flex items-center space-x-2 mb-2'>
@@ -15,13 +23,11 @@ const SimilarStore = ({ icon, name, location, distance }) => {
         <div className='flex items-center text-xs space-x-4 justify-between'>
           <div>
             <span className='text-gray-500'>working hours</span>
-            <h4 className='text-md font-semibold p-0'>
-              monday - friday, 8am-5pm
-            </h4>
+            <h4 className='text-md font-semibold p-0'>{workingHours}</h4>
           </div>
           <div>
             <span className='text-gray-500'>phone number</span>
-            <h4 className='text-md font-semibold p-0'>08096969696</h4>
+            <h4 className='text-md font-semibold p-0'>{phone}</h4>
           </div>
         </div>
         <div className='flex justify-end'>

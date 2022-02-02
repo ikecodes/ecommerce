@@ -3,7 +3,7 @@ import * as api from '../api/api';
 // import Toast from '../utils/Toast';
 
 export const getStates = createAsyncThunk(
-  'auth/getStates',
+  'store/getStates',
   async (arg, { rejectWithValue }) => {
     try {
       const {
@@ -17,7 +17,7 @@ export const getStates = createAsyncThunk(
 );
 
 export const getLga = createAsyncThunk(
-  'auth/getLga',
+  'store/getLga',
   async (id, { rejectWithValue }) => {
     try {
       const {
@@ -31,7 +31,7 @@ export const getLga = createAsyncThunk(
 );
 
 export const getStores = createAsyncThunk(
-  'auth/getStores',
+  'store/getStores',
   async (args, { rejectWithValue }) => {
     const { state, lga } = args;
     try {
