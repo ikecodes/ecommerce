@@ -1,4 +1,8 @@
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getProducts, getBanners } from './slices/productSlice';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Loader from './components/Loader';
 import Cart from './pages/Cart';
 import Favorites from './pages/Favorites';
 import Home from './pages/Home';
@@ -8,6 +12,15 @@ import Products from './pages/Products';
 import SignIn from './pages/SignIn';
 import Welcome from './pages/Welcome';
 function App() {
+  const loading = useSelector((state) => state.product.loading);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getBanners());
+    dispatch(getProducts());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  if (loading) return <Loader />;
   return (
     <Router>
       <Routes>

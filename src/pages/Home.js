@@ -103,6 +103,7 @@ const Home = () => {
                 image={ProductImage}
                 description='Black Flip phone'
                 price={5000}
+                salePrice={6000}
                 availability
                 home
               />
@@ -129,6 +130,7 @@ const Home = () => {
                 image={ProductImage}
                 description='Black Flip phone'
                 price={5000}
+                salePrice={6000}
                 availability
                 home
               />

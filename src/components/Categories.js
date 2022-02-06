@@ -11,26 +11,25 @@ const Categories = ({ showFilter }) => {
     dispatch(getCategories());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  // absolute top-0 left-0 flex justify-center h-full w-full bg-white
   return (
-    <div className='absolute top-0 left-0 flex justify-center h-full w-full bg-white'>
-      <div>
-        <ul className='space-y-2'>
-          {categories &&
-            categories.map((category) => (
-              <li key={category.name}>
-                <button
-                  className='capitalize font-normal text-medium whitespace-nowrap'
-                  onClick={() => {
-                    dispatch(getProductsByCategory(category.name));
-                    navigate('/products');
-                  }}
-                >
-                  {category.name}
-                </button>
-              </li>
-            ))}
-        </ul>
-      </div>
+    <div className='bg-white'>
+      <ul className='space-y-3'>
+        {categories &&
+          categories.map((category) => (
+            <li key={category.name}>
+              <button
+                className='capitalize font-normal text-medium whitespace-nowrap'
+                onClick={() => {
+                  dispatch(getProductsByCategory(category.name));
+                  navigate('/products');
+                }}
+              >
+                {category.name}
+              </button>
+            </li>
+          ))}
+      </ul>
     </div>
   );
 };
