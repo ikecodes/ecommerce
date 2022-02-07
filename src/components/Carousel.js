@@ -20,7 +20,6 @@ const Carousel = () => {
     <>
       <div className='flex h-[30vh] md:h-[70vh]'>
         <div className='hidden md:flex basis-1/4 shrink-1 justify-center'>
-          {/* <span className='font-bold text-white'>ORDER NOW</span> */}
           <Categories />
         </div>
         <div className='grow relative'>

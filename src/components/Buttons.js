@@ -3,7 +3,7 @@ import { FaCartPlus } from 'react-icons/fa';
 
 export const AddToCart = () => {
   return (
-    <div className='flex bg-[#3EC1F9] rounded-full w-40 p-1 items-center  justify-center'>
+    <div className='flex bg-[#3EC1F9] rounded-full w-40  items-center  justify-center'>
       <FaCartPlus color='white' />
       <button className='text-white text-xs uppercase p-2 font-semibold'>
         Add to cart
@@ -13,7 +13,7 @@ export const AddToCart = () => {
 };
 export const BuyNow = () => {
   return (
-    <div className='flex bg-white rounded-full border-[0.5px] border-[#3EC1F9] justify-center w-40 p-1mt-2 items-center'>
+    <div className='flex bg-white rounded-full border-[0.5px] border-[#3EC1F9] justify-center w-40 p-1 mt-2 items-center'>
       <button className='text-[#3EC1F9]  text-xs uppercase p-2 font-semibold'>
         buy now
       </button>

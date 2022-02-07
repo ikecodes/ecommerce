@@ -98,8 +98,8 @@ export const getSimilarStores = createAsyncThunk(
 const initialState = {
   loading: false,
   banners: [],
-  categories: [],
   products: [],
+  catProducts: null,
   product: null,
   similarProducts: [],
   similarStores: [],

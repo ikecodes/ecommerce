@@ -14,7 +14,7 @@ const Categories = ({ showFilter }) => {
   // absolute top-0 left-0 flex justify-center h-full w-full bg-white
   return (
     <div className='bg-white'>
-      <ul className='space-y-3'>
+      <ul className='ml-10 space-y-3'>
         {categories &&
           categories.map((category) => (
             <li key={category.name}>
