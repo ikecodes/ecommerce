@@ -111,7 +111,7 @@ const Locator = () => {
           </div>
         )}
 
-        {stores && stores.length < 0 && (
+        {stores && !stores.length && (
           <div className='my-8 text-center'>
             <h4 className=' text-red-500 capitalize font-semibold'>
               There is no store currently near your location

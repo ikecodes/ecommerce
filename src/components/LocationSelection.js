@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getLga, getStates } from '../slices/storeSlice';
+import { getLga, getStates, getStores } from '../slices/storeSlice';
 
 const LocationSelector = ({ showLocator, handleShowLocator }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [state, setState] = useState('');
   const [lga, setLga] = useState('');
   const states = useSelector((state) => state.store.states);
@@ -20,7 +22,11 @@ const LocationSelector = ({ showLocator, handleShowLocator }) => {
   }, [state]);
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(state, lga);
+    if (lga === '') return;
+    localStorage.setItem('stateId', state);
+    localStorage.setItem('lgaId', lga);
+    dispatch(getStores({ state, lga }));
+    navigate('/locator');
   };
   return (
     <div

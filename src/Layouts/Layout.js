@@ -4,6 +4,8 @@ import Header from './Header';
 import Welcome from './Welcome';
 import NavBarLg from './NavBarLg';
 const Layout = ({ children }) => {
+  const stateId = localStorage.getItem('stateId');
+  const lgaId = localStorage.getItem('lgaId');
   const [showLocator, setShowLocator] = useState(false);
   const [showNav, setShowNav] = useState(false);
   const handleShowLocator = () => {
@@ -15,7 +17,7 @@ const Layout = ({ children }) => {
 
   return (
     <div>
-      <Welcome handleShowLocator={handleShowLocator} />
+      {!stateId && !lgaId && <Welcome handleShowLocator={handleShowLocator} />}
       <Header
         showLocator={showLocator}
         handleShowLocator={handleShowLocator}

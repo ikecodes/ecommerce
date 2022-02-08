@@ -48,7 +48,7 @@ export const getStores = createAsyncThunk(
 const initialState = {
   states: [],
   lga: [],
-  stores: [],
+  stores: null,
 };
 
 export const storeSlice = createSlice({
@@ -70,7 +70,7 @@ export const storeSlice = createSlice({
       state.stores = payload;
     },
     [getLga.fulfilled]: (state, { payload }) => {
-      state.lga = payload;
+      state.lga = [{ id: '12345', name: 'select lga' }, ...payload];
     },
     [getStates.fulfilled]: (state, { payload }) => {
       state.states = [{ id: '1234', name: 'select state' }, ...payload];
