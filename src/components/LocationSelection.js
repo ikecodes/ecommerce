@@ -18,7 +18,6 @@ const LocationSelector = ({ showLocator, handleShowLocator }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state]);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(state, lga);
@@ -34,6 +33,7 @@ const LocationSelector = ({ showLocator, handleShowLocator }) => {
         className={`noShow2 lg:mx-20 bg-white flex items-center flex-wrap justify-center p-10  md:space-x-4 gap-4 ${
           showLocator ? 'showAnim2' : ''
         } `}
+        onClick={(e) => e.stopPropagation()}
       >
         <div className='h-14 flex items-center'>
           <label

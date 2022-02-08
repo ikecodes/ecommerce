@@ -15,6 +15,7 @@ const ProductItem = ({
   salePrice,
 }) => {
   const dispatch = useDispatch();
+
   return (
     <div className='relative'>
       <Link to={`/productDetails?id=${id}`}>
@@ -41,7 +42,7 @@ const ProductItem = ({
       <div className='pb-2'></div>
       {toCart && (
         <div className='flex items-center  justify-between'>
-          <AddToCart />
+          <AddToCart quantity={1} id={id} />
           <BsHeart
             className='text-[#3EC1F9] cursor-pointer'
             onClick={() => dispatch(addToFavorites(id))}

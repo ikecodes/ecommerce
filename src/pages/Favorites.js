@@ -13,17 +13,17 @@ const Favorites = () => {
   }, []);
   return (
     <Layout>
-      <div className='py-10 px-5'>
+      <div className='pb-12 px-5'>
         <div className='overflow-x-scroll scrollbar-hide m-auto lg:px-20'>
-          <h1 className='uppercase font-semibold mb-2'>favourite</h1>
+          <h1 className='uppercase font-medium mb-2'>favourite</h1>
           <table className='w-full'>
             <thead className='text-left border-b border-gray-300 mb-4'>
               <tr>
-                <th className='p-4'></th>
-                <th className='p-4'>Description</th>
-                <th className='p-4'>Price</th>
-                <th className='p-4'>Action</th>
-                <th className='p-4'></th>
+                <th className='p-4 font-medium'></th>
+                <th className='p-4 font-medium'>Description</th>
+                <th className='p-4 font-medium'>Price</th>
+                <th className='p-4 font-medium'>Action</th>
+                <th className='p-4 font-medium'></th>
               </tr>
             </thead>
             <tbody className='divide-y space-y-4'>
@@ -40,10 +40,7 @@ const Favorites = () => {
                       </div>
                     </td>
                     <td className='p-4'>
-                      <h4 className='font-semibold'>{item.name}</h4>
-                      {/* <h4 className=' text-[#7F7F7F] text-sm'>
-                        high grade fliper phone
-                      </h4> */}
+                      <h4 className='font-medium'>{item.name}</h4>
                     </td>
                     <td className='text-[#3EC1F9] font-semibold text-md p-4'>
                       N{item.price}

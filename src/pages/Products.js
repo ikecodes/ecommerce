@@ -10,7 +10,7 @@ const Products = () => {
 
   return (
     <Layout>
-      <div className='flex mb-8'>
+      <div className='flex mb-12'>
         <div className='hidden md:flex basis-1/4 shrink-1 justify-center'>
           <Categories />
         </div>

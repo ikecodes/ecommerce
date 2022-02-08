@@ -1,8 +1,8 @@
 export const menu = [
-  { name: 'home', to: '/' },
-  { name: 'products', to: '/products' },
-  { name: 'deal', to: '/deal' },
-  { name: 'about', to: '/about' },
+  { name: 'home', value: '', to: '/' },
+  { name: 'products', value: 'products', to: '/products' },
+  { name: 'deal', value: 'deal', to: '/deal' },
+  { name: 'about', value: 'about', to: '/about' },
 ];
 
 export const support = [

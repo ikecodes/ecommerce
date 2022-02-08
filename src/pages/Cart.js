@@ -7,23 +7,23 @@ const Cart = () => {
   const arr = [1, 2, 3, 4];
   return (
     <Layout>
-      <div className='py-10 px-5'>
+      <div className='pb-12 px-5'>
         <div className='overflow-x-scroll scrollbar-hide m-auto lg:px-20'>
-          <h1 className='uppercase font-semibold mb-2'>my cart</h1>
+          <h1 className='uppercase font-medium mb-2'>my cart</h1>
           <table className='w-full'>
             <thead className='text-left border-b border-gray-300 mb-4'>
               <tr>
-                <th className='p-4'></th>
-                <th className='p-4'>Description</th>
-                <th className='p-4'>Price</th>
-                <th className='p-4'>Quantity</th>
-                <th className='p-4'></th>
+                <th className='p-4 font-medium'></th>
+                <th className='p-4 font-medium'>Description</th>
+                <th className='p-4 font-medium'>Price</th>
+                <th className='p-4 font-medium'>Quantity</th>
+                <th className='p-4 font-medium'></th>
               </tr>
             </thead>
             <tbody className='divide-y space-y-4 text-[#000000DE]'>
               {arr.map((item, index) => (
                 <tr key={index}>
-                  <td className='p-4'>
+                  <td className=''>
                     <div className='h-40 w-40'>
                       <img
                         className='h-full w-full object-cover'
@@ -33,7 +33,7 @@ const Cart = () => {
                     </div>
                   </td>
                   <td className='p-4'>
-                    <h4 className='font-semibold'>Fliper phone</h4>
+                    <h4 className='font-medium'>Fliper phone</h4>
                     <h4 className='text-[#7F7F7F] text-sm'>
                       high grade fliper phone
                     </h4>

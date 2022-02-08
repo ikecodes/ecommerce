@@ -17,7 +17,7 @@ const NavBar = () => {
         <FaTh size={20} className='font-medium -mr-4 mr-2' />
         <span className='uppercase mx-2 font-medium'>Categories</span>
       </div>
-      <ul className='flex items-center space-x-4 ml-10 md:ml-40'>
+      <ul className='flex items-center space-x-10 ml-10 md:ml-40'>
         {menu.map((item) => (
           <li key={item.name}>
             <Link to={item.to} onClick={() => handleNav(item)}>

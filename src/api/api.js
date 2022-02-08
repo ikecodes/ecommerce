@@ -41,3 +41,21 @@ export const getStores = (stateId, lgaId) =>
 export const getFavorites = () => API.get('/products?favourites=true');
 export const addToFavorites = (id) => API.post(`/favorites/${id}`);
 export const removeFromFavorites = (id) => API.delete(`/favorites/${id}`);
+
+/////Cart
+export const getCart = () => API.get('/cart');
+export const addToCart = (formdata) => API.post('/cart', formdata);
+export const removeFromCart = (id) => API.delete(`/cart/${id}`);
+export const updateCart = (id, formdata) => API.patch(`/cart/${id}`, formdata);
+
+// {
+//     "product_id": "956e6e71-859a-4b61-971a-50c0e61a910b",
+//     "store_id": "956e6e72-ba5b-48b8-aebd-83a18bf5c5e8",
+//     "quantity": 1
+// }
+
+// {
+//     "quantity": 5,
+//     "store_id": "956e6e72-ba5b-48b8-aebd-83a18bf5c5e8"
+
+// }

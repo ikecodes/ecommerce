@@ -29,7 +29,7 @@ export const addToFavorites = createAsyncThunk(
   }
 );
 export const removeFromFavorites = createAsyncThunk(
-  'favorite/addToFavorites',
+  'favorite/removeFromFavorites',
   async (id, { rejectWithValue }) => {
     try {
       await api.removeFromFavorites(id);
@@ -46,8 +46,8 @@ const initialState = {
   favorites: [],
 };
 
-const productSlice = createSlice({
-  name: 'product',
+const favoriteSlice = createSlice({
+  name: 'favorite',
   initialState,
   reducers: {},
   extraReducers: {
@@ -60,4 +60,4 @@ const productSlice = createSlice({
   },
 });
 
-export default productSlice.reducer;
+export default favoriteSlice.reducer;

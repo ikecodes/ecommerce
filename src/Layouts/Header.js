@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { getUser } from '../slices/authSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -17,25 +17,17 @@ import LocationSelection from '../components/LocationSelection';
 import StartOrder from '../components/StartOrder';
 import StoreLocatorBtn from '../components/StoreLocatorBtn';
 import NavBarSm from './NavBarSm';
-const Header = () => {
+
+const Header = ({ showLocator, handleShowLocator, showNav, handleShowNav }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
-  const [showLocator, setShowLocator] = useState(false);
-  const [showNav, setShowNav] = useState(false);
 
   useEffect(() => {
     if (token) {
       dispatch(getUser());
     }
   }, [navigate, token, dispatch]);
-
-  const handleShowLocator = () => {
-    setShowLocator((prev) => !prev);
-  };
-  const handleShowNav = () => {
-    setShowNav((prev) => !prev);
-  };
 
   const handleLogout = () => {
     localStorage.clear();
