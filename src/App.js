@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getProducts, getBanners } from './slices/productSlice';
+import {
+  getProducts,
+  getBanners,
+  getProductsByStore,
+} from './slices/productSlice';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Loader from './components/Loader';
 import Cart from './pages/Cart';
@@ -11,10 +15,13 @@ import ProductDetails from './pages/ProductDetails';
 import Products from './pages/Products';
 import SignIn from './pages/SignIn';
 function App() {
+  const storeId = localStorage.getItem('storeId');
   const loading = useSelector((state) => state.product.loading);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(getBanners());
+    if (storeId) return dispatch(getProductsByStore(storeId));
     dispatch(getProducts());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

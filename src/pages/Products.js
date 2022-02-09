@@ -7,7 +7,7 @@ import StoreLocation from '../components/StoreLocation';
 
 const Products = () => {
   const { products } = useSelector((state) => state.product);
-  const store = useSelector((state) => state.store.store);
+  const store = JSON.parse(localStorage.getItem('store'));
   const [sort, setSort] = useState('high');
   return (
     <Layout>

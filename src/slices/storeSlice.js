@@ -58,6 +58,7 @@ export const storeSlice = createSlice({
   reducers: {
     setStore: (state, { payload }) => {
       state.store = state.stores.find((store) => store.id === payload);
+      localStorage.setItem('store', JSON.stringify(state.store));
     },
   },
   extraReducers: {
