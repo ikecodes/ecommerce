@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { getProducts } from '../slices/productSlice';
+import { getProducts, getProductsByStore } from '../slices/productSlice';
 import { FaTh } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { menu } from '../constants/menu';
 const NavBar = () => {
   const dispatch = useDispatch();
   const [active, setActive] = useState('home');
+  const storeId = localStorage.getItem('storeId');
   const handleNav = (item) => {
     setActive(item.name);
-    if (item.name === 'products') dispatch(getProducts());
+    if (item.name === 'products' && storeId)
+      return dispatch(getProductsByStore(storeId));
+    dispatch(getProducts());
   };
   return (
     <div className='hidden sm:flex items-center p-4'>

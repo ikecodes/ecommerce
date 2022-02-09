@@ -18,11 +18,11 @@ export const getBanners = createAsyncThunk(
 
 export const getCategories = createAsyncThunk(
   'product/getCategories',
-  async (arg, { rejectWithValue }) => {
+  async (id, { rejectWithValue }) => {
     try {
       const {
         data: { data },
-      } = await api.getCategories();
+      } = await api.getCategories(id);
       return data;
     } catch (error) {
       rejectWithValue(error);
@@ -31,11 +31,13 @@ export const getCategories = createAsyncThunk(
 );
 export const getProductsByCategory = createAsyncThunk(
   'product/getProductsByCategory',
-  async (category, { rejectWithValue }) => {
+  async (arg, { rejectWithValue }) => {
+    const { category, id } = arg;
+    console.log(id);
     try {
       const {
         data: { data },
-      } = await api.categoriesProduct(category);
+      } = await api.categoriesProduct(category, id);
       return data;
     } catch (error) {
       rejectWithValue(error);

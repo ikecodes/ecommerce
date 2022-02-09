@@ -29,8 +29,8 @@ export const getSimilarStore = (id) => API.get(`products/${id}/stores`);
 export const getSimilarProduct = (id) => API.get(`/products?similar_to=${id}`);
 
 export const getCategories = () => API.get('/categories?page=1');
-export const categoriesProduct = (category) =>
-  API.get(`/products?category=${category}`);
+export const categoriesProduct = (category, id) =>
+  API.get(`/products?category=${category}&store=${id}`);
 
 ////STORES
 export const getStates = () => API.get('/states');

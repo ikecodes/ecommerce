@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCategories, getProductsByCategory } from '../slices/productSlice';
 
-const Categories = ({ showFilter }) => {
+const Categories = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const categories = useSelector((state) => state.product.categories);
+  const storeId = localStorage.getItem('storeId');
+  let id = storeId || '';
   useEffect(() => {
     dispatch(getCategories());
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -21,7 +23,12 @@ const Categories = ({ showFilter }) => {
               <button
                 className='capitalize font-normal text-medium whitespace-nowrap'
                 onClick={() => {
-                  dispatch(getProductsByCategory(category.name));
+                  dispatch(
+                    getProductsByCategory({
+                      category: category.name,
+                      id: id,
+                    })
+                  );
                   navigate('/products');
                 }}
               >
