@@ -49,20 +49,15 @@ const initialState = {
   states: [],
   lga: [],
   stores: null,
+  store: null,
 };
 
 export const storeSlice = createSlice({
   name: 'store',
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action) => {
-      state.value += action.payload;
+    setStore: (state, { payload }) => {
+      state.store = state.stores.find((store) => store.id === payload);
     },
   },
   extraReducers: {
@@ -79,6 +74,6 @@ export const storeSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-// export const { increment, decrement, incrementByAmount } = authSlice.actions;
+export const { setStore } = storeSlice.actions;
 
 export default storeSlice.reducer;

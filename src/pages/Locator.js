@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getStates, getLga, getStores } from '../slices/storeSlice';
-import { FaStore } from 'react-icons/fa';
 import StoreLocation from '../components/StoreLocation';
 import Layout from '../Layouts/Layout';
 import Toast from '../utils/Toast';
@@ -102,10 +101,11 @@ const Locator = () => {
             {stores.map((store) => (
               <StoreLocation
                 key={store.id}
-                icon={<FaStore size={30} />}
+                id={store.id}
                 name={store.name}
-                distance='500km away'
+                phone={store.phone}
                 location={store.address}
+                showBtn
               />
             ))}
           </div>

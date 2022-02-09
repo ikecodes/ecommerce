@@ -56,6 +56,21 @@ export const getProducts = createAsyncThunk(
     }
   }
 );
+
+export const getProductsByStore = createAsyncThunk(
+  'product/getProductsByStore',
+  async (id, { rejectWithValue }) => {
+    try {
+      const {
+        data: { data },
+      } = await api.getProductsByStore(id);
+      return data;
+    } catch (error) {
+      rejectWithValue(error);
+    }
+  }
+);
+
 export const getProduct = createAsyncThunk(
   'product/getProduct',
   async (id, { rejectWithValue }) => {
@@ -123,6 +138,9 @@ const productSlice = createSlice({
       state.categories = payload;
     },
     [getProducts.fulfilled]: (state, { payload }) => {
+      state.products = payload;
+    },
+    [getProductsByStore.fulfilled]: (state, { payload }) => {
       state.products = payload;
     },
     [getProductsByCategory.fulfilled]: (state, { payload }) => {

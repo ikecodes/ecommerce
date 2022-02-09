@@ -23,6 +23,7 @@ export const addToSubscribers = (formdata) => API.post('/subscribe', formdata);
 ////PRODUCT
 export const getBanners = () => API.get('/banners');
 export const getProducts = () => API.get('/products');
+export const getProductsByStore = (id) => API.get(`/products?store=${id}`);
 export const getProduct = (id) => API.get(`/products/${id}`);
 export const getSimilarStore = (id) => API.get(`products/${id}/stores`);
 export const getSimilarProduct = (id) => API.get(`/products?similar_to=${id}`);

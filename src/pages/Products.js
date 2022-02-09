@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux';
 import Layout from '../Layouts/Layout';
 import ProductItem from '../components/ProductItem';
 import Categories from '../components/Categories';
+import StoreLocation from '../components/StoreLocation';
 
 const Products = () => {
   const { products } = useSelector((state) => state.product);
+  const store = useSelector((state) => state.store.store);
   const [sort, setSort] = useState('high');
-
   return (
     <Layout>
       <div className='flex mb-12'>
@@ -16,6 +17,18 @@ const Products = () => {
         </div>
 
         <div className='w-[100%] md:w-[70%]'>
+          {store && (
+            <div className='mx-4 my-8'>
+              <StoreLocation
+                key={store.id}
+                id={store.id}
+                name={store.name}
+                phone={store.phone}
+                location={store.address}
+              />
+            </div>
+          )}
+
           <div className='flex items-center justify-center md:justify-between mx-4 mb-6'>
             <h1 className='font-medium text-xl capitalize'>products</h1>
             <div className='hidden md:flex items-center'>
