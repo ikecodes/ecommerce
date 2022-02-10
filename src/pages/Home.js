@@ -100,7 +100,7 @@ const Home = () => {
               view all
             </h4>
           </div>
-          <div className='p-8 justify-items-center grid grid-cols-2 lg:grid-cols-4 gap-8'>
+          <div className='p-8 justify-items-center grid grid-cols-2 lg:grid-cols-4 gap-20 md:gap-8'>
             {bestProducts &&
               bestProducts
                 .slice(0, all ? bestProducts.length : 4)
