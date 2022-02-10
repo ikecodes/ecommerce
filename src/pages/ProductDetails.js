@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import moment from 'moment';
 import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import Layout from '../Layouts/Layout';
@@ -12,10 +13,12 @@ import {
   getSimilarProduct,
   getSimilarStores,
 } from '../slices/productSlice';
+import { addToFavorites } from '../slices/favoriteSlice';
 
 const ProductDetails = () => {
   const store = JSON.parse(localStorage.getItem('store'));
   const dispatch = useDispatch();
+  const [property, setProperty] = useState('description');
   const { product, similarProducts, similarStores } = useSelector(
     (state) => state.product
   );
@@ -29,6 +32,7 @@ const ProductDetails = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productId]);
+  console.log(product);
   return (
     <Layout>
       <div className='capitalize mb-10 p-2 lg:px-20'>
@@ -105,7 +109,10 @@ const ProductDetails = () => {
                   <AddToCart />
                   <BuyNow />
                 </div>
-                <BsHeart className='text-[#3EC1F9] ml-6 mr-2 md:text-xl text-3xl cursor-pointer' />
+                <BsHeart
+                  className='text-[#3EC1F9] ml-6 mr-2 md:text-xl text-3xl cursor-pointer'
+                  onClick={() => dispatch(addToFavorites(productId))}
+                />
                 <span className='uppercase text-[#3EC1F9]'>save for later</span>
               </div>
               <h1 className='bg-[#F5F5F5] p-2 mt-2 text-[#212121DE] font-medium'>
@@ -117,18 +124,62 @@ const ProductDetails = () => {
         {/* /////////////////////////////////////////////////////////////// */}
         <div className='my-5'>
           <ul className='inline-flex  pt-10 pb-5 capitalize'>
-            <li className='px-4 py-2 -mb-px font-semibold text-black border-b-2 border-blue-500 rounded-t opacity-80'>
+            <li
+              onClick={() => setProperty('description')}
+              className={`px-4 py-2 -mb-px font-semibold cursor-pointer text-gray-800 border-b-2 border-gray-400 rounded-t ${
+                property === 'description'
+                  ? 'border-blue-500 text-black opacity-80'
+                  : 'opacity-50'
+              }`}
+            >
               <span>description</span>
             </li>
-            <li className='px-4 py-2 -mb-px font-semibold text-gray-800 border-b-2 border-gray-400 rounded-t opacity-50'>
+            <li
+              onClick={() => setProperty('specification')}
+              className={`px-4 py-2 -mb-px font-semibold cursor-pointer text-gray-800 border-b-2 border-gray-400 rounded-t ${
+                property === 'specification'
+                  ? 'border-blue-500 text-black opacity-80'
+                  : 'opacity-50'
+              }`}
+            >
               <span>specification</span>
             </li>
-            <li className='px-4 py-2 -mb-px font-semibold text-gray-800 border-b-2 border-gray-400 rounded-t opacity-50'>
+            <li
+              onClick={() => setProperty('review')}
+              className={`px-4 py-2 -mb-px font-semibold cursor-pointer text-gray-800 border-b-2 border-gray-400 rounded-t ${
+                property === 'review'
+                  ? 'border-blue-500 text-black opacity-80'
+                  : 'opacity-50'
+              }`}
+            >
               <span>review</span>
             </li>
           </ul>
           <div>
-            <p className='p-0'>{product?.description}</p>
+            {property === 'description' ? (
+              <p className='p-0'>{product?.description}</p>
+            ) : property === 'specification' ? (
+              <p className='p-0'>{product?.specification}</p>
+            ) : (
+              <div className='space-y-4'>
+                {product?.reviews.map((review) => (
+                  <div className='text-sm'>
+                    <div className='flex'>
+                      {[...Array(Math.round(review.rating * 1))].map(
+                        (rate, i) => {
+                          return <FaStar key={i} color='#FDCC0D' />;
+                        }
+                      )}
+                    </div>
+
+                    <p>{review.comment}</p>
+                    <span className='text-xs'>
+                      {moment(review.created_at).format('MMM Do YYYY')}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
         </div>
         {/* /////////////////////////////////////////////////////////////////////////////////////// */}
