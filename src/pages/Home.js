@@ -107,6 +107,7 @@ const Home = () => {
                 .map((item) => (
                   <ProductItem
                     key={item.id}
+                    home
                     id={item.id}
                     image={item.image}
                     description={item.name}

@@ -20,7 +20,9 @@ const ProductItem = ({
     <div className='relative'>
       <Link to={`/productDetails?id=${id}`}>
         <div
-          className={`${home ? 'w-40 h-40 lg:w-60 lg:h-60' : 'w-60 h-60'} mb-2`}
+          className={` ${
+            home ? 'w-full h-40 lg:w-full lg:h-60' : 'w-60 h-60'
+          } mb-2`}
         >
           <img
             className='object-cover h-full w-full'
@@ -32,6 +34,7 @@ const ProductItem = ({
       <span className='bg-[#3EC1F9] p-2 absolute top-4 rounded-l-full right-0 text-white'>
         Out of stock
       </span>
+
       <div className='font-medium text-md mb-2.5  text-[#000000DE]'>
         {description}
       </div>

@@ -32,7 +32,6 @@ const ProductDetails = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productId]);
-  console.log(product);
   return (
     <Layout>
       <div className='capitalize mb-10 p-2 lg:px-20'>
@@ -167,7 +166,7 @@ const ProductDetails = () => {
                     <div className='flex'>
                       {[...Array(Math.round(review.rating * 1))].map(
                         (rate, i) => {
-                          return <FaStar key={i} color='#FDCC0D' />;
+                          return <FaStar key={review.id} color='#FDCC0D' />;
                         }
                       )}
                     </div>
