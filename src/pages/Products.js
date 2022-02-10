@@ -9,6 +9,12 @@ const Products = () => {
   const { products } = useSelector((state) => state.product);
   const store = JSON.parse(localStorage.getItem('store'));
   const [sort, setSort] = useState('high');
+
+  const arrayToSort = [...products];
+  const sortedArray = arrayToSort.sort((a, b) =>
+    sort === 'low' ? a.price - b.price : b.price - a.price
+  );
+  console.log(sortedArray);
   return (
     <Layout>
       <div className='flex mb-12'>
@@ -18,7 +24,7 @@ const Products = () => {
 
         <div className='w-[100%] md:w-[70%]'>
           {store && (
-            <div className='mx-4 my-8'>
+            <div className='mx-4 mb-8'>
               <StoreLocation
                 key={store.id}
                 id={store.id}
@@ -36,14 +42,6 @@ const Products = () => {
                 sort by
               </h1>
               <div className='flex items-center rounded-xl  text-center text-[#DBDBDB]'>
-                {/* <button
-                  className={`rounded-l-lg p-1 border-[0.5px] border-[#DBDBDB] px-4 ${
-                    sort === 'relevance' && 'bg-[#3EC1F9] text-white px-4'
-                  }`}
-                  onClick={() => setSort('relevance')}
-                >
-                  relevance
-                </button> */}
                 <button
                   className={`rounded-l-lg p-1 border-[0.5px] border-[#DBDBDB]  ${
                     sort === 'high' && 'bg-[#3EC1F9] text-white'
@@ -64,8 +62,8 @@ const Products = () => {
             </div>
           </div>
           <div className='grid grid-cols-1 justify-items-center lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2  gap-8 border-t border-gray-200 pt-4'>
-            {products.length > 0 ? (
-              products.map((item) => (
+            {sortedArray.length > 0 ? (
+              sortedArray.map((item) => (
                 <ProductItem
                   key={item.id}
                   id={item.id}
