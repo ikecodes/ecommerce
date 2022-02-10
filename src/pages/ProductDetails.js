@@ -14,14 +14,13 @@ import {
 } from '../slices/productSlice';
 
 const ProductDetails = () => {
+  const store = JSON.parse(localStorage.getItem('store'));
   const dispatch = useDispatch();
   const { product, similarProducts, similarStores } = useSelector(
     (state) => state.product
   );
   const location = useLocation();
   const productId = location.search.split('=')[1];
-
-  console.log(similarStores);
   useEffect(() => {
     if (productId) {
       dispatch(getProduct(productId));
@@ -32,10 +31,10 @@ const ProductDetails = () => {
   }, [productId]);
   return (
     <Layout>
-      <div className='capitalize my-10 p-2 lg:px-48'>
-        <div className='flex items-center lg:items-start flex-wrap p-4  justify-between'>
+      <div className='capitalize mb-10 p-2 lg:px-20'>
+        <div className='flex items-center lg:items-start flex-wrap gap-2  justify-between'>
           <div>
-            <img className='max-h-96' src={product?.image} alt='product' />
+            <img className='max-h-[26rem]' src={product?.image} alt='product' />
             <div className='flex items-center gap-4 mt-2'>
               {product?.images.map((image) => (
                 <img
@@ -102,14 +101,15 @@ const ProductDetails = () => {
                 </div>
               </div>
               <div className='flex items-center justify-between mt-6'>
-                <div className='flex flex-wrap items-start justify-start space-y-2 md:space-y-0 md:space-x-2'>
+                <div className='flex flex-wrap items-center justify-start md:space-x-6'>
                   <AddToCart />
                   <BuyNow />
                 </div>
-                <BsHeart className='text-[#3EC1F9] md:text-base text-3xl cursor-pointer' />
+                <BsHeart className='text-[#3EC1F9] ml-6 mr-2 md:text-xl text-3xl cursor-pointer' />
+                <span className='uppercase text-[#3EC1F9]'>save for later</span>
               </div>
               <h1 className='bg-[#F5F5F5] p-2 mt-2 text-[#212121DE] font-medium'>
-                Sold by <span className='text-[#3EC1F9]'>Slot Africa</span>
+                Sold by <span className='text-[#3EC1F9]'>{store?.name}</span>
               </h1>
             </div>
           </div>

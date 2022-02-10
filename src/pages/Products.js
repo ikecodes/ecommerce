@@ -14,7 +14,6 @@ const Products = () => {
   const sortedArray = arrayToSort.sort((a, b) =>
     sort === 'low' ? a.price - b.price : b.price - a.price
   );
-  console.log(sortedArray);
   return (
     <Layout>
       <div className='flex mb-12'>

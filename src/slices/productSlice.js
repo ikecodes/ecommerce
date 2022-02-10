@@ -33,7 +33,6 @@ export const getProductsByCategory = createAsyncThunk(
   'product/getProductsByCategory',
   async (arg, { rejectWithValue }) => {
     const { category, id } = arg;
-    console.log(id);
     try {
       const {
         data: { data },
@@ -52,6 +51,19 @@ export const getProducts = createAsyncThunk(
       const {
         data: { data },
       } = await api.getProducts();
+      return data;
+    } catch (error) {
+      rejectWithValue(error);
+    }
+  }
+);
+export const getProductsByBest = createAsyncThunk(
+  'product/getProductsByBest',
+  async (storeId, { rejectWithValue }) => {
+    try {
+      const {
+        data: { data },
+      } = await api.getProductsByBest(storeId);
       return data;
     } catch (error) {
       rejectWithValue(error);
@@ -113,6 +125,7 @@ export const getSimilarStores = createAsyncThunk(
   }
 );
 const initialState = {
+  best: [],
   loading: false,
   banners: [],
   products: [],
@@ -141,6 +154,9 @@ const productSlice = createSlice({
     },
     [getProducts.fulfilled]: (state, { payload }) => {
       state.products = payload;
+    },
+    [getProductsByBest.fulfilled]: (state, { payload }) => {
+      state.best = payload;
     },
     [getProductsByStore.fulfilled]: (state, { payload }) => {
       state.products = payload;

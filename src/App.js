@@ -4,6 +4,7 @@ import {
   getProducts,
   getBanners,
   getProductsByStore,
+  getProductsByBest,
 } from './slices/productSlice';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Loader from './components/Loader';
@@ -18,10 +19,11 @@ function App() {
   const storeId = localStorage.getItem('storeId');
   const loading = useSelector((state) => state.product.loading);
   const dispatch = useDispatch();
-
+  let id = storeId || '';
   useEffect(() => {
     dispatch(getBanners());
-    if (storeId) return dispatch(getProductsByStore(storeId));
+    dispatch(getProductsByBest(id));
+    if (storeId) return dispatch(getProductsByStore(id));
     dispatch(getProducts());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

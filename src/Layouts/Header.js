@@ -30,7 +30,7 @@ const Header = ({ showLocator, handleShowLocator, showNav, handleShowNav }) => {
   }, [navigate, token, dispatch]);
 
   const handleLogout = () => {
-    localStorage.clear();
+    localStorage.removeItem('token');
     Toast('loggin you out', 'info');
     navigate('/');
   };

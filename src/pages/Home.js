@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import Layout from '../Layouts/Layout';
 import SpeakerI from '../assets/images/speaker.png';
 import SpeakerII from '../assets/images/beats.jpg';
-import ProductImage from '../assets/images/prod2.jpg';
 import Services from '../components/Services';
 
 import {
@@ -20,7 +20,8 @@ import Discount from '../components/Discount';
 import Carousel from '../components/Carousel';
 
 const Home = () => {
-  const arr = [1, 2, 3, 4];
+  const [all, setAll] = useState(false);
+  const bestProducts = useSelector((state) => state.product.best);
 
   return (
     <Layout>
@@ -92,25 +93,32 @@ const Home = () => {
               best selling
             </h4>
             <div className='w-full h-0.5 bg-gray-300'></div>
-            <h4 className='font-bold text-sm w-1/4 shrink-0 md:shrink text-center capitalize bg-white cursor-pointer text-[#3EC1F9]'>
+            <h4
+              className='font-bold text-sm w-1/4 shrink-0 md:shrink text-center capitalize bg-white cursor-pointer text-[#3EC1F9]'
+              onClick={() => setAll((prev) => !prev)}
+            >
               view all
             </h4>
           </div>
           <div className='p-8 justify-items-center grid grid-cols-2 lg:grid-cols-4 gap-8'>
-            {arr.map((item) => (
-              <ProductItem
-                key={item}
-                image={ProductImage}
-                description='Black Flip phone'
-                price={5000}
-                salePrice={6000}
-                availability
-                home
-              />
-            ))}
+            {bestProducts &&
+              bestProducts
+                .slice(0, all ? bestProducts.length : 4)
+                .map((item) => (
+                  <ProductItem
+                    key={item.id}
+                    id={item.id}
+                    image={item.image}
+                    description={item.name}
+                    price={item.price}
+                    salePrice={item.sale_price}
+                    toCart
+                    availability={item.stores_having_product}
+                  />
+                ))}
           </div>
         </div>
-
+        {/* 
         <div className='my-10'>
           <div className='flex items-center justify-between'>
             <h4 className='font-bold text-sm w-1/4 shrink-0 md:shrink  text-center uppercase bg-white z-10 whitespace-nowrap ml-2 mr-8'>
@@ -121,22 +129,10 @@ const Home = () => {
               view all
             </h4>
           </div>
-          {/* mt-10 overflow-x-auto flex items-center lg:justify-around px-8
-          space-x-4 scrollbar-hide */}
           <div className='p-8 justify-items-center grid grid-cols-2 lg:grid-cols-4 gap-8'>
-            {arr.map((item) => (
-              <ProductItem
-                key={item}
-                image={ProductImage}
-                description='Black Flip phone'
-                price={5000}
-                salePrice={6000}
-                availability
-                home
-              />
-            ))}
+          
           </div>
-        </div>
+        </div> */}
       </div>
 
       <Discount
