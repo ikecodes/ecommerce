@@ -25,20 +25,18 @@ const Categories = () => {
               className={`bg-[#fafafa] p-[3px] ${
                 active === category ? 'border-l-2 border-[#3EC1F9]' : ''
               }`}
+              onClick={() => {
+                setActive(category);
+                dispatch(
+                  getProductsByCategory({
+                    category: category.name,
+                    id: id,
+                  })
+                );
+                navigate('/products');
+              }}
             >
-              <button
-                className='capitalize font-normal text-medium whitespace-nowrap'
-                onClick={() => {
-                  setActive(category);
-                  dispatch(
-                    getProductsByCategory({
-                      category: category.name,
-                      id: id,
-                    })
-                  );
-                  navigate('/products');
-                }}
-              >
+              <button className='capitalize font-normal text-medium whitespace-nowrap'>
                 {category.name}
               </button>
             </li>

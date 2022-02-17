@@ -13,6 +13,7 @@ const ProductItem = ({
   availability,
   home,
   salePrice,
+  in_stock,
 }) => {
   const dispatch = useDispatch();
 
@@ -31,9 +32,11 @@ const ProductItem = ({
           />
         </div>
       </Link>
-      <span className='bg-[#3EC1F9] p-2 absolute top-4 rounded-l-full right-0 text-white'>
-        Out of stock
-      </span>
+      {!in_stock && (
+        <span className='bg-[#3EC1F9] p-2 absolute top-4 rounded-l-full right-0 text-white'>
+          Out of stock
+        </span>
+      )}
 
       <div className='font-medium text-md mb-2.5  text-[#000000DE]'>
         {description}

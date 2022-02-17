@@ -19,7 +19,6 @@ export const getCart = createAsyncThunk(
 export const addToCart = createAsyncThunk(
   'cart/addToCart',
   async (formdata, { rejectWithValue }) => {
-    console.log(formdata);
     try {
       await api.addToCart(formdata);
       Toast('Added product to cart', 'success');
@@ -53,10 +52,10 @@ const cartSlice = createSlice({
   reducers: {},
   extraReducers: {
     [getCart.fulfilled]: (state, { payload }) => {
-      state.cart = payload;
+      state.carts = payload;
     },
     [removeFromCart.fulfilled]: (state, { payload }) => {
-      state.cart = state.cart.filter((item) => item.id !== payload);
+      state.carts = state.cart.filter((item) => item.id !== payload);
     },
   },
 });

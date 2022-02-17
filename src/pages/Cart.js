@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Layout from '../Layouts/Layout';
 import ProductImage from '../assets/images/product-placeholder.jpg';
 import { FaMinus, FaPlus } from 'react-icons/fa';
+import { getCart } from '../slices/cartSlice';
 
 const Cart = () => {
-  const arr = [1, 2, 3, 4];
+  const dispatch = useDispatch();
+  const { carts } = useSelector((state) => state.cart);
+
+  useEffect(() => {
+    dispatch(getCart());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  // console.log(carts);
   return (
     <Layout>
       <div className='pb-12 px-5'>
@@ -21,39 +30,40 @@ const Cart = () => {
               </tr>
             </thead>
             <tbody className='divide-y space-y-4 text-[#000000DE]'>
-              {arr.map((item, index) => (
-                <tr key={index}>
-                  <td className=''>
-                    <div className='h-40 w-40'>
-                      <img
-                        className='h-full w-full object-cover'
-                        src={ProductImage}
-                        alt='product'
-                      />
-                    </div>
-                  </td>
-                  <td className='p-4'>
-                    <h4 className='font-medium'>Fliper phone</h4>
-                    <h4 className='text-[#7F7F7F] text-sm'>
-                      high grade fliper phone
-                    </h4>
-                  </td>
-                  <td className='text-[#3EC1F9] font-semibold text-md p-4'>
-                    N9,000
-                  </td>
-                  <td className='p-4'>
-                    <div className='flex  justify-start  space-x-2 p-4 flex-wrap'>
-                      <span className='flex border-2 border-[#00000029] items-center'>
-                        <FaPlus className='bg-[#3EC1F9] h-full p-1 text-xl cursor-pointer' />
-                        <span className='px-2'>3</span>
-                        <FaMinus className='bg-[#3EC1F9] h-full p-1 text-xl cursor-pointer' />
-                      </span>
-                      <span></span>
-                    </div>
-                  </td>
-                  <td className='text-red-400 cursor-pointer'>remove</td>
-                </tr>
-              ))}
+              {carts.length > 0 &&
+                carts.map((item) => (
+                  <tr key={item.id}>
+                    <td className=''>
+                      <div className='h-40 w-40'>
+                        <img
+                          className='h-full w-full object-cover'
+                          src={ProductImage}
+                          alt='product'
+                        />
+                      </div>
+                    </td>
+                    <td className='p-4'>
+                      <h4 className='font-medium'>Fliper phone</h4>
+                      <h4 className='text-[#7F7F7F] text-sm'>
+                        high grade fliper phone
+                      </h4>
+                    </td>
+                    <td className='text-[#3EC1F9] font-semibold text-md p-4'>
+                      N9,000
+                    </td>
+                    <td className='p-4'>
+                      <div className='flex  justify-start  space-x-2 p-4 flex-wrap'>
+                        <span className='flex border-2 border-[#00000029] items-center'>
+                          <FaPlus className='bg-[#3EC1F9] h-full p-1 text-xl cursor-pointer' />
+                          <span className='px-2'>3</span>
+                          <FaMinus className='bg-[#3EC1F9] h-full p-1 text-xl cursor-pointer' />
+                        </span>
+                        <span></span>
+                      </div>
+                    </td>
+                    <td className='text-red-400 cursor-pointer'>remove</td>
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>

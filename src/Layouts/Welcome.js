@@ -16,7 +16,7 @@ const Welcome = ({ handleShowLocator }) => {
           onClick={handleShowLocator}
         >
           <FaMapMarkerAlt />
-          <span className='text-sm'>select location</span>
+          <span className='text-sm whitespace-nowrap'>select location</span>
         </button>
         {/* <p className='text-sm my-4'>
           <span className='text-[#3EC1F9]'>sign in</span> if you have an account

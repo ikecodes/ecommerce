@@ -20,7 +20,6 @@ const Products = () => {
         <div className='hidden md:flex basis-1/4 shrink-1 justify-center'>
           <Categories />
         </div>
-
         <div className='w-[100%] md:w-[70%]'>
           {store && (
             <div className='mx-4 mb-8'>
@@ -70,6 +69,7 @@ const Products = () => {
                   description={item.name}
                   price={item.price}
                   salePrice={item.sale_price}
+                  in_stock={item.in_stock}
                   toCart
                   availability={item.stores_having_product}
                 />

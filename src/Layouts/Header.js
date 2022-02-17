@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import decode from 'jwt-decode';
 import { getUser } from '../slices/authSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -24,14 +25,19 @@ const Header = ({ showLocator, handleShowLocator, showNav, handleShowNav }) => {
   const token = localStorage.getItem('token');
 
   useEffect(() => {
-    if (token) {
+    if (localStorage.getItem('token')) {
+      const decodedToken = decode(localStorage.getItem('token'));
+      if (decodedToken.exp * 1000 < new Date().getTime())
+        return handleLogout('token expired,login again');
       dispatch(getUser());
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navigate, token, dispatch]);
 
-  const handleLogout = () => {
+  const handleLogout = (msg) => {
     localStorage.removeItem('token');
-    Toast('loggin you out', 'info');
+    Toast(msg, 'info');
     navigate('/');
   };
   return (
@@ -75,7 +81,7 @@ const Header = ({ showLocator, handleShowLocator, showNav, handleShowNav }) => {
           {token ? (
             <div
               className='flex items-center text-white text-sm p-2 cursor-pointer'
-              onClick={handleLogout}
+              onClick={() => handleLogout('Logging you out')}
             >
               <FaSignOutAlt />
               <span className='pl-2'>Logout</span>
