@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import decode from 'jwt-decode';
-import { getUser } from '../slices/authSlice';
+import { getUser, resetAuth } from '../slices/authSlice';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import Toast from '../utils/Toast';
@@ -37,6 +37,7 @@ const Header = ({ showLocator, handleShowLocator, showNav, handleShowNav }) => {
 
   const handleLogout = (msg) => {
     localStorage.removeItem('token');
+    // dispatch(resetAuth());
     Toast(msg, 'info');
     navigate('/');
   };
