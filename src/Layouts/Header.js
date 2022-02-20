@@ -37,7 +37,7 @@ const Header = ({ showLocator, handleShowLocator, showNav, handleShowNav }) => {
 
   const handleLogout = (msg) => {
     localStorage.removeItem('token');
-    // dispatch(resetAuth());
+    dispatch(resetAuth());
     Toast(msg, 'info');
     navigate('/');
   };
@@ -102,7 +102,7 @@ const Header = ({ showLocator, handleShowLocator, showNav, handleShowNav }) => {
               <span className='pl-2'>2</span>
             </div>
           </Link>
-          <Link to='/cart'>
+          <Link to='/'>
             <div className='flex items-center text-white text-sm p-2'>
               <FaCartPlus />
               <span className='pl-2'>4</span>

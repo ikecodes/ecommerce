@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import hero from '../assets/images/banner-shoe.jpg';
 import { useSelector } from 'react-redux';
 import Categories from './Categories';
 const Carousel = () => {
@@ -25,7 +26,8 @@ const Carousel = () => {
         <div className='grow relative'>
           <img
             className='h-full w-full object-cover'
-            src={banners[index]?.image}
+            // src={banners[index]?.image}
+            src={hero}
             alt='Header Banner'
           />
           <div className='absolute h-full w-full top-0 bg-[rgb(0,0,0,0.5)]'></div>
